@@ -80,5 +80,4 @@ export class IntraBankConfirmComponent implements OnInit {
     goBack() {
         this.router.navigate(['/'+ COMPONENT_AIO.INTRA_BANK_SETTING]);
     }
-
 }

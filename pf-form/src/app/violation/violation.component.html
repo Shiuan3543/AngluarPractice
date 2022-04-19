@@ -1,0 +1,25 @@
+<table class="table table-bordered table-striped">
+    <thead class="">
+    <tr>
+        <th scope="col">排序</th>
+        <th scope="col">路口名</th>
+        <th scope="col">件數</th>
+    </tr>
+    </thead>
+    <tbody class="border-info">
+    <tr *ngFor="let i of violators">
+        <th scope="row">{{i._id}}</th>
+        <td>{{i["路口名"]}}</td>
+        <td>{{i["件數"]}}</td>
+    </tr>
+    </tbody>
+</table>
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
+    <!-- <div fxLayoutAlign="center center"><button class="btn btn-outline-primary fullsize"
+        (click)="clear()">取消</button></div> -->
+    <div fxLayoutAlign="center center">
+        <button class="btn btn-outline-primary fullsize"
+                (click)="goMain()">回首頁
+        </button>
+    </div>
+</div>

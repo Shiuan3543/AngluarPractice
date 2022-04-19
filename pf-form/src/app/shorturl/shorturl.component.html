@@ -5,7 +5,7 @@
             <h2>短網址產生器</h2>
             <input type="text" [(ngModel)]="shortcut.longUrl">
             <button type="reset" (click)="addUrl(shortcut.longUrl)">輸入長網址</button>
-           
+
         </div>
         <div class="col-6">
             <h2>短網址查詢長網址</h2>
@@ -21,27 +21,34 @@
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
             <!-- <div class="qrcodeImage" ngif ='sList.id>0' align="center"> -->
             <qrcode #parent [qrdata]="sList.longUrl" [elementType]="'img'" [width]="256"
-                [colorLight]="'#000000'" [colorDark]="'FFFF00'" [errorCorrectionLevel]="'M'"></qrcode>
+                    [colorLight]="'#000000'" [colorDark]="'FFFF00'" [errorCorrectionLevel]="'M'"></qrcode>
 
         </div>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
             <div fxLayoutAlign="center center">
                 <div>
                     <button class="btn btn-outline-primary fullsize" (click)="saveAsImage(parent)">Download QR
-                        Code Image</button>
+                        Code Image
+                    </button>
                 </div>
-                <div fxLayoutAlign="center center"><button class="btn btn-outline-primary fullsize"
-                    (click)="deleteUrl(sList.id)">刪除</button></div>
+                <div fxLayoutAlign="center center">
+                    <button class="btn btn-outline-primary fullsize"
+                            (click)="deleteUrl(sList.id)">刪除
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
-        <!-- <div fxLayoutAlign="center center"><button class="btn btn-outline-primary fullsize"
-            (click)="clear()">取消</button></div> -->
-        <div fxLayoutAlign="center center"><button class="btn btn-outline-primary fullsize"
-                (click)="goMain()">回首頁</button></div>
+    <!-- <div fxLayoutAlign="center center"><button class="btn btn-outline-primary fullsize"
+        (click)="clear()">取消</button></div> -->
+    <div fxLayoutAlign="center center">
+        <button class="btn btn-outline-primary fullsize"
+                (click)="goMain()">回首頁
+        </button>
     </div>
+</div>
 <!-- 頁首區塊 -->
 <!-- <div class="bg-md-blue">
     <header class="container px-sm-default mb-0">

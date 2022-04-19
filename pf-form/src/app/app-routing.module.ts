@@ -16,6 +16,7 @@ import {IntraBankSettingComponent} from './intra-bank/intra-bank-setting.compone
 import {InterBank2ConfirmComponent} from "./inter-bank/inter-bank-2-confirm.component";
 import {UserComponent} from "./user/user.component";
 import {ShorturlComponent} from "./shorturl/shorturl.component";
+import {ViolationComponent} from "./violation/violation.component";
 
 
 const routes: Routes = [
@@ -84,6 +85,10 @@ const routes: Routes = [
     {
         path: COMPONENT_AIO.SHORTURL,  //短網址
         component: ShorturlComponent
+    },
+    {
+        path: COMPONENT_AIO.VIOLATION,  //短網址
+        component: ViolationComponent
     }
 ];
 

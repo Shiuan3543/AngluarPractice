@@ -17,7 +17,7 @@ import {TradeModel} from "../@core/shared/model/trade.model";
 })
 export class MainComponent implements OnInit {
 
-    constructor(private http:HttpClient,
+    constructor(private http: HttpClient,
                 protected routingService: RouteUiService,
                 protected dialogService: SlideDialogService,
                 protected spinnerService: SpinnerService,
@@ -27,32 +27,39 @@ export class MainComponent implements OnInit {
                 protected activatedRoute: ActivatedRoute,
                 protected gd: GlobalDataService) {
     }
+
     tradeList: Array<TradeModel> = [];
+
     ngOnInit() {
 
     }
 
     goCashDeposit() {
-        this.router.navigate(['/'+ COMPONENT_AIO.CASH_DEPOSIT_SETTING]);
+        this.router.navigate(['/' + COMPONENT_AIO.CASH_DEPOSIT_SETTING]);
     }
 
     goCashWithdrawal() {
-        this.router.navigate(['/'+COMPONENT_AIO.CASH_WITHDRAW_SETTING]);
+        this.router.navigate(['/' + COMPONENT_AIO.CASH_WITHDRAW_SETTING]);
     }
 
     goIntraBank() {
-        this.router.navigate(['/'+COMPONENT_AIO.INTRA_BANK_SETTING]);
+        this.router.navigate(['/' + COMPONENT_AIO.INTRA_BANK_SETTING]);
     }
 
     goInterBank() {
-        this.router.navigate(['/'+COMPONENT_AIO.INTER_BANK_SETTING]);
+        this.router.navigate(['/' + COMPONENT_AIO.INTER_BANK_SETTING]);
     }
 
-    getUser(){
-        this.router.navigate(['/'+COMPONENT_AIO.USER]);
+    getUser() {
+        this.router.navigate(['/' + COMPONENT_AIO.USER]);
     }
-    getShortUrl(){
-        this.router.navigate(['/'+COMPONENT_AIO.SHORTURL]);
+
+    getShortUrl() {
+        this.router.navigate(['/' + COMPONENT_AIO.SHORTURL]);
+    }
+
+    getViolation() {
+        this.router.navigate(['/' + COMPONENT_AIO.VIOLATION]);
     }
 
 }
