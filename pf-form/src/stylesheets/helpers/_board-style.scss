@@ -1,0 +1,57 @@
+/* 定義 white board 樣式 */
+// 白色、陰影、圓角
+@mixin float-circle {
+  background-color: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.06);
+  border-radius: 6px;
+}
+// 白色、圓角
+@mixin white-circle {
+  background-color: #fff;
+  border-radius: 6px;
+}
+// 白色、陰影
+@mixin float-square {
+  background-color: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* 定義 4 種 class 組合樣式 */
+// PC, Pad: 白色、陰影、圓角
+.info-board {
+  @include float-circle;
+}
+
+// PC, Pad: 白色、陰影
+.illustration-board {
+  @include float-square;
+}
+
+// PC, Pad: 白色、陰影、圓角
+.data-board {
+  @include float-circle;
+}
+
+// PC, Pad, Phone: 白色、陰影、圓角
+.exhibit-board {
+  @include float-circle;
+}
+
+/* mobile 斷點 */
+@media (max-width: 767px) {
+  // Phone: 白色、圓角
+  .info-board {
+    box-shadow: none;
+  }
+
+  // Phone: 白色、滿版
+  .illustration-board {
+    box-shadow: none;
+  }
+
+  // Phone: 白色、滿版
+  .data-board {
+    box-shadow: none;
+    border-radius: 0;
+  }
+}

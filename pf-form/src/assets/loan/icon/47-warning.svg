@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/47-warning</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M3,19.5454545 L21,19.5454545 L12,4 L3,19.5454545 L3,19.5454545 Z M12.8181818,17.0909091 L11.1818182,17.0909091 L11.1818182,15.4545455 L12.8181818,15.4545455 L12.8181818,17.0909091 L12.8181818,17.0909091 Z M12.8181818,13.8181818 L11.1818182,13.8181818 L11.1818182,10.5454545 L12.8181818,10.5454545 L12.8181818,13.8181818 L12.8181818,13.8181818 Z" id="path-1"></path>
+    </defs>
+    <g id="icon/47-warning" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Mask"></g>
+        <g id="Color/primary/default" mask="url(#mask-2)" fill="#3278BC">
+            <rect id="Color" x="0" y="0" width="24" height="24"></rect>
+        </g>
+    </g>
+</svg>

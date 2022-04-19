@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/03-chevronup</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M19.8637138,8.76263487 L12.4134015,16.2856332 C12.1953436,16.5036911 11.8319137,16.5036911 11.6138558,16.2856332 L4.16354344,8.76263487 C3.94548552,8.54457694 3.94548552,8.18114708 4.16354344,7.96308915 L4.96308915,7.16354344 C5.18114708,6.94548552 5.54457694,6.94548552 5.76263487,7.16354344 L11.6138558,13.0874503 C11.8319137,13.3055082 12.1953436,13.3055082 12.4134015,13.0874503 L18.2646224,7.19988643 C18.4826803,6.98182851 18.8461102,6.98182851 19.0641681,7.19988643 L19.8637138,7.99943214 C20.0454287,8.21749006 20.0454287,8.54457694 19.8637138,8.76263487 L19.8637138,8.76263487 Z" id="path-1"></path>
+    </defs>
+    <g id="icon/03-chevronup" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#54698D" transform="translate(12.000000, 11.724588) rotate(-180.000000) translate(-12.000000, -11.724588) " xlink:href="#path-1"></use>
+        <g id="Color/primary/default" mask="url(#mask-2)" fill="#3278BC">
+            <rect id="Color" x="0" y="0" width="24" height="24"></rect>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,142 @@
+// --- Typography ---
+// 參照 https://www.figma.com/file/QQ6KGpWWa2XhaU42VqsPWg/CDF_Onboarding_Mockup_Sign-off_1?node-id=1163%3A206777
+@import "../helpers/typography";
+
+// --- Colors ---
+// 參照 https://www.figma.com/file/QQ6KGpWWa2XhaU42VqsPWg/CDF_Onboarding_Mockup_Sign-off_1?node-id=1163%3A204976
+
+// Primary Button 主要按鈕
+$white: #ffffff; // Bootstrap 內部 _variables 已預先定義
+$light-blue: #e1ecf4;
+$cdf-digital-blue: #04327a;
+$black: #000000; // Bootstrap 內部 _variables 已預先定義
+$hover-bg: #f0f6fb;
+
+// Secondary Colors 次要按鈕
+$cdf-digital-orange: #ff623e;
+$background-green: #f5faf5;
+$background-yellow: #fcf8e6;
+$background-blue: #f5f8fa;
+$middle-blue: #0044ad; // 已自定義 Bootstrap 內部 _variables 之色號
+$green: #68c89e; // 已自定義 Bootstrap 內部 _variables 之色號
+$yellow: #f2d364; // 已自定義 Bootstrap 內部 _variables 之色號
+$cdf-digital-blue-disabled: #cdd6e4;
+
+// Status 狀態
+$success: #5bb643; // 已自定義 Bootstrap 內部 _variables 之色號
+$warning: #f2a000; // 已自定義 Bootstrap 內部 _variables 之色號
+$error: #d04038; // 已添加自定義 Bootstrap 內部 _variables 之色號
+
+// Status 狀態 (灰階)
+$grey-0: #626364;
+$grey-1: #888888;
+$grey-2: #aaaaaa;
+$grey-3: #c3c3c3;
+$grey-4: #dbdbdb;
+$grey-5: #e4e4e4;
+$grey-6: #f6f6f6;
+
+// 文字基本色
+$text-color: #222222;
+
+.bg-blue {
+  background-color: $background-blue;
+}
+.bg-middle-blue{
+  background-color: $middle-blue;
+}
+.bg-grey-6{
+  background-color: $grey-6;
+}
+
+.border-bg-blue {
+  border: $background-blue;
+}
+.border-bg-middle-blue {
+  border: $middle-blue;
+}
+
+.text-digital-orange {
+  color: $cdf-digital-orange;
+}
+.text-grey-0 {
+  color: $grey-0;
+}
+.text-grey-1 {
+  color: $grey-1;
+}
+.text-grey-3 {
+  color: $grey-3;
+}
+.text-color {
+  color: $text-color;
+}
+.text-middle-blue{
+  color: $middle-blue;
+}
+.user-select-none{
+  user-select: none;
+}
+.pointer-events-none
+{
+  pointer-events: none;
+}
+
+// --- Button ---
+// 參照 https://www.figma.com/file/QQ6KGpWWa2XhaU42VqsPWg/CDF_Onboarding_Mockup_Sign-off_1?node-id=1041%3A195518
+
+// Button 按鈕通用樣式
+.btn {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  border-radius: 0;
+}
+.btn-outline-secondary {
+  border-color: transparent;
+  color: $middle-blue;
+}
+
+// Button —— hover 狀態
+.btn-primary:hover {
+  background-color: #041c43;
+  border-color: #041c43;
+  transition: 0.15s all;
+}
+.btn-outline-secondary:hover {
+  background-color: $hover-bg;
+  color: $middle-blue;
+  border-color: transparent;
+}
+
+// Button —— pressed 狀態
+.btn-primary:active {
+  background-color: $cdf-digital-blue;
+  border-color: $cdf-digital-blue;
+}
+
+// Button —— disable 狀態
+.btn-primary:disabled,
+.btn-secondary:disabled {
+  background-color: $cdf-digital-blue-disabled;
+  border-color: $cdf-digital-blue-disabled;
+}
+
+.longListBtn{
+  .rightArrowIcon{
+    height: 24px;
+    width: 24px;
+    background-image: url(../../assets/image/icon/right_arrow_black.svg);
+    background-size: cover;
+    background-position: center;
+  }
+}
+.longListBtn:hover{
+  text-decoration: none;
+  cursor: pointer;
+  h4{
+    color: $middle-blue;
+  }
+  .rightArrowIcon{
+    background-image: url(../../assets/image/icon/right_arrow_blue.svg);
+  }
+}

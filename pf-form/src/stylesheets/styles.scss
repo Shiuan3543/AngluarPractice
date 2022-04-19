@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+
+//For Overlay CDK component such as slide-dialog
+@import "~@angular/cdk/overlay-prebuilt.css";
+
+// Required
+// 必要的方法
+@import "../../node_modules/bootstrap/scss/functions";
+// 自行定義的變數路徑
+@import "helpers/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+// Bootstrap 完整原始碼
+@import "~bootstrap/scss/bootstrap";
+// 自行定義的 scss
+@import "helpers/modal";
+@import "helpers/offcanvas";
+// 引入 Google Font
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
+.k-drawer-item .k-icon {
+  margin-right: 20px;
+}
+// overlay 遮罩的背景顏色 & 模糊度設定
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing.white-backdrop {
+  background: rgba(239, 239, 239, 0.75);
+  backdrop-filter: blur(24px);
+}
+
+// 同意條款 offcanvas 背景模糊透明度
+.transparent-transparent {
+  opacity: 0.87;
+  background-color: rgba(255, 255, 255, 0.87);
+}
+
+*, {
+  // 自行定義的樣式
+  @import "helpers/utilities";
+  @import "./basic.scss";
+}
+
+
+//-----------------------------------
+//For 選擇信用卡 CarouselModule
+//-----------------------------------
+.p-carousel-container {
+  width: 75% !important;
+  margin: auto;
+}
+.p-carousel-items-content {
+  overflow: visible !important;
+  width: 75% !important; /* adapt this to show more/less of the sided items */
+}
+.p-carousel-prev {
+  z-index: 9999;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.p-carousel-content::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.p-carousel-content {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+//-----------------------------------

@@ -1,0 +1,99 @@
+/** 定義 mixin 指令 **/
+// --- 核取方塊和選項按鈕樣式調整 <開始> ---
+.form-check {
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: none;
+  }
+  padding-left: 0;
+}
+
+@mixin checksAndRadios {
+  .radioLabel {
+    padding-left: 1.875rem; // 30px
+  }
+  .checkboxLabel {
+    padding-left: 1.875rem; // 30px
+  }
+
+  label {
+    position: relative;
+  }
+  // checkbox
+  label .box {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 0;
+    border: 1px solid #0044ad;
+    background: white;
+    cursor: pointer;
+  }
+  label input:checked + .box {
+    background: #0044ad;
+  }
+  label .box:before {
+    content: "";
+    position: absolute;
+    top: 1.2px;
+    left: 5.2px;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  // radio
+  .radioLabel .circle {
+    position: absolute;
+    top: 6px;
+    left: 0px;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    border: 1px solid #0044ad;
+    background: white;
+    cursor: pointer;
+  }
+  .radioLabel input:checked + .circle {
+    background: #0044ad;
+  }
+  .radioLabel .circle:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: solid white;
+    border-radius: 100%;
+  }
+  .radioLabel .circle:hover {
+    background: #f0f6fb;
+  }
+  .checkboxContent{
+    padding-left: 30px;
+  }
+}
+
+// switch
+.form-switch {
+  input[type="checkbox"] {
+    display: block;
+  }
+}
+
+.form-switch .form-check-input {
+  margin: 0;
+  float: none;
+}
+// --- 核取方塊和選項按鈕樣式調整 <結束> ---
+
+/** 引用 mixin **/
+.form-check {
+  @include checksAndRadios;
+}

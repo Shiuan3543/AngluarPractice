@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/02-album</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M21,4.66 L21,19.84 C21,20.02 20.9375,20.175 20.8125,20.305 C20.6875,20.435 20.53,20.5 20.34,20.5 L3.6605,20.5 C3.48,20.5 3.325,20.435 3.195,20.305 C3.065,20.175 3,20.02 3,19.84 L3,4.66 C3,4.48 3.065,4.325 3.195,4.195 C3.325,4.065 3.48,4 3.6605,4 L20.34,4 C20.53,4 20.6875,4.065 20.8125,4.195 C20.9375,4.325 21,4.48 21,4.66 C21,4.66 21,4.48 21,4.66 L21,4.66 L21,4.66 Z M19.5,5.5 L4.5,5.5 L4.5,16.555 L8.2055,13.825 L12.675,15.79 L11.565,13.45 L15.96,8.68 L19.5,13 L19.5,5.5 L19.5,5.5 L19.5,5.5 L19.5,5.5 Z M9.5555,7.825 C9.945,8.215 10.1405,8.69 10.1405,9.25 C10.1405,9.81 9.945,10.285 9.5555,10.675 C9.165,11.065 8.69,11.26 8.13,11.26 C7.57,11.26 7.0955,11.065 6.7055,10.675 C6.315,10.285 6.1205,9.81 6.1205,9.25 C6.1205,8.69 6.315,8.215 6.7055,7.825 C7.0955,7.435 7.57,7.24 8.13,7.24 C8.69,7.24 9.165,7.435 9.5555,7.825 L9.5555,7.825 Z" id="path-1"></path>
+    </defs>
+    <g id="icon/02-album" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Fill-63" fill="#231F20" xlink:href="#path-1"></use>
+        <g id="Color/primary/default" mask="url(#mask-2)" fill="#3278BC">
+            <rect id="Color" x="0" y="0" width="24" height="24"></rect>
+        </g>
+    </g>
+</svg>

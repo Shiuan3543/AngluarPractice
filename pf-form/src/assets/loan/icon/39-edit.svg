@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/39-edit</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M5.43595878,15.6277426 L8.34572198,18.5379408 L4,19.999565 L5.43595878,15.6277426 L5.43595878,15.6277426 L5.43595878,15.6277426 L5.43595878,15.6277426 Z M6.61004323,14.5706751 L14.6228759,6.55784236 L17.4160572,9.35058862 L9.40278948,17.3634213 L6.61004323,14.5706751 L6.61004323,14.5706751 L6.61004323,14.5706751 L6.61004323,14.5706751 Z M15.7451945,5.43552378 L16.9719148,4.16965281 C17.102852,4.05655094 17.2464044,4 17.402572,4 C17.5591746,4 17.702727,4.05655094 17.8336641,4.16965281 L19.8299122,6.16633588 C19.9430141,6.2881379 20,6.43386531 20,6.60351812 C20,6.77317093 19.9430141,6.91498328 19.8299122,7.02765015 L18.5379408,8.22827003 L15.7451945,5.43552378 L15.7451945,5.43552378 Z" id="path-1"></path>
+    </defs>
+    <g id="icon/39-edit" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Fill-7" fill="#231F20" xlink:href="#path-1"></use>
+        <g id="Color/primary/default" mask="url(#mask-2)" fill="#3278BC">
+            <rect id="Color" x="0" y="0" width="24" height="24"></rect>
+        </g>
+    </g>
+</svg>

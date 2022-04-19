@@ -1,0 +1,87 @@
+<div class="container">
+    <h2 class="text-center pb-5">短網址產生😈😕😅😄😁</h2>
+    <div class="row">
+        <div class="col-6">
+            <h2>短網址產生器</h2>
+            <input type="text" [(ngModel)]="shortcut.longUrl">
+            <button type="reset" (click)="addUrl(shortcut.longUrl)">輸入長網址</button>
+           
+        </div>
+        <div class="col-6">
+            <h2>短網址查詢長網址</h2>
+            <!-- <input type="text" [(ngModel)]="shortcut.shortUrl"> -->
+            <input type="text" [(ngModel)]="shortcut.searchShortUrl">
+            <button type="reset" (click)="searchLongUrl(shortcut.searchShortUrl)">查詢長網址</button>
+        </div>
+    </div>
+    <div *ngFor="let sList of shortList"><br>
+        <b>長網址：</b><a target="_blank" href="{{sList.longUrl}}">{{sList.longUrl}}</a>
+        <!-- <b>短網址：</b><a target="_blank" href="{{sList.longUrl}}">{{sList.shortUrl}}</a>  -->
+        <b>短網址：</b><a href="#/shortcut" (click)="goToLink(shortcut.longUrl)">{{sList.shortUrl}}</a>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
+            <!-- <div class="qrcodeImage" ngif ='sList.id>0' align="center"> -->
+            <qrcode #parent [qrdata]="sList.longUrl" [elementType]="'img'" [width]="256"
+                [colorLight]="'#000000'" [colorDark]="'FFFF00'" [errorCorrectionLevel]="'M'"></qrcode>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
+            <div fxLayoutAlign="center center">
+                <div>
+                    <button class="btn btn-outline-primary fullsize" (click)="saveAsImage(parent)">Download QR
+                        Code Image</button>
+                </div>
+                <div fxLayoutAlign="center center"><button class="btn btn-outline-primary fullsize"
+                    (click)="deleteUrl(sList.id)">刪除</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
+        <!-- <div fxLayoutAlign="center center"><button class="btn btn-outline-primary fullsize"
+            (click)="clear()">取消</button></div> -->
+        <div fxLayoutAlign="center center"><button class="btn btn-outline-primary fullsize"
+                (click)="goMain()">回首頁</button></div>
+    </div>
+<!-- 頁首區塊 -->
+<!-- <div class="bg-md-blue">
+    <header class="container px-sm-default mb-0">
+        <div class="applyTitle pb-5 pb-md-6">
+            <section class="d-flex justify-content-between align-items-center">
+                <div class="div" style="width: 24px; height: 24px"></div>
+                <h2  class="text-dark-grey web-ch-h3 mobile-ch-h3">
+                    短網址產生器
+                </h2>
+                <div class="div" style="width: 24px; height: 24px"></div>
+            </section>
+        </div>
+    </header>
+</div> -->
+<!-- 主要內容區塊 -->
+<!-- <div class="bg-md-blue">
+    <main class="container px-0">
+        <div class="outerContainer">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
+                <label class="web-ch-h6 mobile-ch-h6 text-grey-0">請輸入網址</label> 
+                <input class="form-control" [(ngModel)]="longUrl" targetSelectAll/>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
+                <div fxLayoutAlign="center center"><button class="btn btn-outline-primary fullsize" (click)="addUrl(longUrl)">產生短網址</button></div>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
+                短網址:
+                <a href="#/shortcut" (click)="goToLink(longUrl)">{{shortUrl}}</a>
+            </div>
+
+            <!--<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">-->
+<!--<a href="#" onclick="window.open(' http://tw.yahoo.com ', 'Yahoo', config='height=500,width=500');">雅虎開新視窗</a>-->
+<!--</div>-->
+
+<!-- <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
+                <div fxLayoutAlign="center center"><button class="btn btn-outline-primary fullsize" (click)="goMain()">回首頁</button></div>
+            </div>
+
+        </div>
+    </main>
+</div> -->

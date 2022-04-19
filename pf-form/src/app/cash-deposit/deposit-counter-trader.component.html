@@ -1,0 +1,66 @@
+<!-- 頁首區塊 -->
+<div class="bg-md-blue">
+    <header class="container px-sm-default mb-0">
+        <div class="applyTitle pb-5 pb-md-6">
+            <section class="d-flex justify-content-between align-items-center">
+                <div class="div" style="width: 24px; height: 24px"></div>
+                <h2  class="text-dark-grey web-ch-h3 mobile-ch-h3">
+                    臺幣現金存款（限存入活期性/支票存款帳戶）
+                </h2>
+                <div class="div" style="width: 24px; height: 24px"></div>
+            </section>
+        </div>
+    </header>
+</div>
+<!-- 主要內容區塊 -->
+<div class="bg-md-blue">
+    <main class="container px-0">
+        <form #form="ngForm" ngNativeValidate class="data-boa rd container px-default px-md-8 py-md-6 mb-4 mb-md-5">
+
+            <fieldset class="mb-4">
+                <div class="categoryRadioBlock pt-1">臨櫃交易人資訊</div>
+            </fieldset>
+<!--            {{ form.valid }}-->
+                <fieldset>
+                    <fieldset class="mt-5">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">存款人姓名</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="counterTrader"
+                                       maxlength="6" minlength="3" placeholder="請輸入姓名" targetSelectAll [(ngModel)]="traderModel.counterTrader">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="mt-3">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">身分證字號</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="counterTraderId"
+                                       maxlength="10" minlength="10" placeholder="請輸入身分證字號" targetSelectAll [(ngModel)]="traderModel.counterTraderId">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="mt-3">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">聯絡電話</label>
+                            <div class="col-sm-10">
+                                <input phoneValidator #phone type="tel" class="form-control" id="phone" name="counterTraderPhone"
+                                       maxlength="10" [(ngModel)]="traderModel.counterTraderPhone" targetSelectAll placeholder="手機或市話" />
+                            </div>
+                        </div>
+                    </fieldset>
+                </fieldset>
+
+        </form>
+
+        <!-- 底部按鈕區塊 -->
+        <div class="">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+                <div fxLayoutAlign="center center"><button class="btn btn-primary actionButton" (click)="goNext()">下一步</button></div>
+                <div fxLayoutAlign="center center"><button class="btn btn-primary actionButton" (click)="goMain()">回主選單</button></div>
+            </div>
+        </div>
+    </main>
+</div>

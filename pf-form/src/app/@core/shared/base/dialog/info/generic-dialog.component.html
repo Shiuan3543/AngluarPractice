@@ -1,0 +1,14 @@
+<div class="pt-4">
+    <div class="d-flex px-sm-default px-md-6 pt-3 pt-md-0 m-auto">
+        <div *ngIf="contentText==='F099-系統異常，請洽'"  class="d-flex justify-content-center" style="min-height: 100px">
+            {{ contentText }}<a href="">客服中心</a>。
+        </div>
+        <div *ngIf="contentText!='F099-系統異常，請洽'"class="d-flex justify-content-center" style="margin: 0 auto;">
+            {{ contentText }}
+        </div>
+    </div>
+    <div class="pb-6"></div>
+    <div class="btnListBorder d-flex text-center">
+        <button class="confirmBtn btn btn-outline-secondary k-button-secondary web-ch-h6 mobile-ch-h6 col" (click)="close()"> {{ confirmContent }} </button>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div>
+    <div class="d-flex justify-content-center">
+        <p>
+            {{ contentText }}
+        </p>
+    </div>
+    <div class="pb-5"></div>
+    <div class="btnListBorder d-flex text-center">
+        <button class="cancelBtn btn btn-outline-secondary web-ch-h4 mobile-ch-h6 col"
+                (click)="close('no')">
+            {{ cancelContent }}
+        </button>
+        <div class="btnListBorderLine"></div>
+        <button class="confirmBtn btn btn-outline-secondary k-button-secondary web-ch-h4 mobile-ch-h6 col" (click)="close('yes')">
+            {{ confirmContent }}
+        </button>
+    </div>
+</div>

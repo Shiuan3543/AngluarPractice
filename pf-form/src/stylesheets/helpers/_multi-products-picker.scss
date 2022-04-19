@@ -1,0 +1,110 @@
+/** 定義 mixin 指令 **/
+// ----- products-select -----
+.productsSelect {
+  .productsBoard {
+    padding: 24px 48px;
+    border-radius: 4px;
+    border: solid 1px #0044ad;
+    .selectBoardContentIcon {
+      margin-right: 12px;
+    }
+    h4 {
+      font-size: 16px;
+      line-height: 22.4px;
+      font-weight: 400;
+    }
+    p {
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 300;
+    }
+  }
+  .selectBoardContent img {
+    width: 60px;
+    height: 60px;
+  }
+  .selectIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (max-width: 767px) {
+    input[type="checkbox"] + label,
+    input[type="checkbox"] + label:hover {
+      background-color: rgba(246, 246, 246, 0.6);
+      border-color: rgba(246, 246, 246, 0.6);
+    }
+    input[type="checkbox"]:checked + label:hover {
+      background-color: #fff;
+      border-color: #0044ad;
+    }
+    .ccPicker {
+      margin-bottom: 28px;
+    }
+    .productsBroad {
+      padding: 10px;
+    }
+    .mb-form-check {
+      margin-bottom: 68px;
+    }
+    .checkboxLabel a {
+      margin-top: 12px;
+    }
+    .btnTitle img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+// --- 完成頁產品複選共通樣式 <開始> ---
+.pickerBlock {
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"]:checked + label {
+    border: 1px solid $middle-blue;
+    color: #000;
+    .toggleBtn {
+      display: block;
+    }
+
+  }
+}
+
+@mixin multiProductsPicker {
+  border: solid 1px $grey-3;
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 230px;
+  margin-bottom: 12px;
+  width: 100%;
+  padding: 24px 48px;
+  .checkLabelIcon {
+    margin-right: 12px;
+  }
+  h4 {
+    font-size: 16px;
+    line-height: 22.4px;
+    font-weight: 400;
+  }
+  .text {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 300;
+  }
+  .toggleBtn {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    padding: 10px;
+  }
+}
+
+// --- 完成頁產品複選共通樣式 <結束> ---
+
+/** 引用 mixin **/
+.multiProductsPicker {
+  @include multiProductsPicker;
+}

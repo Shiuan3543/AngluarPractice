@@ -1,0 +1,64 @@
+<!-- 頁首區塊 -->
+
+
+<div class="bg-md-blue">
+    <header class="container px-sm-default mb-0">
+        <div class="applyTitle pb-5 pb-md-6">
+            <section class="d-flex justify-content-between align-items-center">
+                <div class="div" style="width: 24px; height: 24px"></div>
+                <h2  class="text-dark-grey web-ch-h3 mobile-ch-h3">
+                    預填表單
+                </h2>
+                <div class="div" style="width: 24px; height: 24px"></div>
+            </section>
+        </div>
+    </header>
+</div>
+<!-- 主要內容區塊 -->
+<div class="bg-md-blue">
+    <main class="container px-0">
+        <!-- 表單區塊 -->
+        <form class="gIdentityBottom data-board d-flex flex-column px-md-8 py-md-7" [formGroup]="myFormGroup">
+            <!-- 水平列 -->
+            <div>
+                <label for="idno" class="web-ch-h6 mobile-ch-h6 text-grey-0">身分證字號</label>
+                <input type="text" class="form-control" id="idno" name="idno" maxlength="10" aria-describedby="enterIdentityNumber" targetSelectAll
+                       formControlName="idno" placeholder="身分證字號（必填）" [(ngModel)]="baseModel.idno" (keyup)="upperCase($event)" />
+            </div>
+            <div class="mt-2"
+                 *ngIf="myFormGroup.controls['idno'].invalid && (myFormGroup.controls['idno'].dirty || myFormGroup.controls['idno'].touched)">
+                <span *ngIf="myFormGroup.controls['idno']?.errors?.message" class="errorText">{{myFormGroup.controls['idno']?.errors?.message}}</span>
+            </div>
+
+            <!-- 水平列 -->
+            <div class="mt-5 mt-md-6">
+                <label for="phone" class="web-ch-h6 mobile-ch-h6 text-grey-0">請輸入您的手機或市話</label>
+                <input phoneValidator #phone type="tel" class="form-control" id="phone" name="phone"  maxlength="10" [(ngModel)]="baseModel.phone" targetSelectAll
+                      formControlName="phone" placeholder="手機或市話（必填）" />
+            </div>
+
+            <div class="mt-2"
+                 *ngIf="myFormGroup.controls['phone'].invalid && (myFormGroup.controls['phone'].dirty || myFormGroup.controls['phone'].touched)">
+                <span *ngIf="myFormGroup.controls['phone']?.errors?.error" class="errorText">{{myFormGroup.controls.phone.errors.message}}</span>
+            </div>
+
+            <!-- 本人已閱讀並同意下列條款及告知事項 -->
+            <div class="form-check mt-6">
+                <label class="checkboxLabel web-ch-h6 mobile-ch-h6 mb-checkboxLabel mb-2" for="ch1">
+                    <input type="checkbox" id="ch1" name="ch1" formControlName="ch1"/>
+                    同意將本表單所填入之資料運用於辦理本項業務，凱基銀行本次所蒐集之
+                    個人資料僅限於辦理本項業務使用並不做其他用途。
+                    <div class="box"></div>
+                </label>
+            </div>
+        </form>
+        <!-- 底部按鈕區塊 -->
+        <div class="bottomBtn container px-sm-default px-md-8 d-flex flex-column">
+            <button (click)="login()" class="btn btn-primary web-ch-h4 mobile-ch-h4 mt-md-7"
+                    >
+<!--                    [disabled]="myFormGroup.invalid||nextButtonDisable">-->
+                我同意以上條款並繼續
+            </button>
+        </div>
+    </main>
+</div>

@@ -1,0 +1,97 @@
+.itemList {
+  ul li {
+    list-style: disc;
+  }
+}
+
+.carouselBar {
+  padding-left: 0;
+
+  li:first-child {
+    height: 4px;
+    width: 22px;
+    background: #0044ad;
+    border-radius: 1px;
+    margin-right: 4px;
+  }
+
+  li:nth-child(2),
+  li:last-child {
+    height: 4px;
+    width: 4px;
+    background: #0044ad;
+    opacity: 0.3;
+    border-radius: 1px;
+  }
+
+  li:nth-child(2) {
+    margin-right: 4px;
+  }
+}
+
+figure {
+  width: 774px;
+  margin: 0 auto;
+}
+
+.arrowBtnIcon {
+  border: none;
+  background-color: transparent;
+  font-size: 60px;
+}
+
+.k-i-arrow-chevron-left::before,
+.k-i-arrow-chevron-right::before {
+  cursor: pointer;
+}
+
+.k-i-arrow-chevron-left:hover,
+.k-i-arrow-chevron-right:hover {
+  opacity: .7;
+}
+
+.cardImages {
+  width: 398px;
+  height: 250px;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  figure {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 767px) {
+  figure {
+    width: 100%;
+    overflow: hidden;
+  }
+  .sideCard {
+    width: 214px;
+    height: 136px;
+  }
+  .selectedCard {
+    width: 264px;
+    height: 168px;
+  }
+  .multiCardList {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .cardImages {
+    width: 264px;
+    height: 168px;
+  }
+}
+
+@media (max-width: 320px) {
+  .cardImages {
+    width: 240px;
+    height: 152px;
+  }
+  .arrowBtnIcon {
+    font-size: 48px;
+  }
+}

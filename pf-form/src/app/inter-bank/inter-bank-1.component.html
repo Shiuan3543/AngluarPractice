@@ -1,0 +1,107 @@
+<!-- 頁首區塊 -->
+<div class="bg-md-blue">
+    <header class="container px-sm-default mb-0">
+        <div class="applyTitle pb-5 pb-md-6">
+            <section class="d-flex justify-content-between align-items-center">
+                <div class="div" style="width: 24px; height: 24px"></div>
+                <h2  class="text-dark-grey web-ch-h3 mobile-ch-h3">
+                    臺幣他行轉帳
+                </h2>
+                <div class="div" style="width: 24px; height: 24px"></div>
+            </section>
+        </div>
+    </header>
+</div>
+<!-- 主要內容區塊 -->
+<div class="bg-md-blue">
+    <main class="container px-0">
+        <form class="data-board container px-default px-md-8 py-md-6 mb-4 mb-md-5" [formGroup]="myFormGroup">
+            <fieldset class="mt-5">
+                <label class="col-sm-2 col-form-label">收款人資訊</label>
+            </fieldset>
+
+            <fieldset class="mt-5">
+                <div class="form-group row">
+                    <label class="form-group col-sm-2">收款銀行</label>
+                    <div class="col-sm-5">
+                        <select class="form-select" name="payeeBankId" formControlName="payeeBankId" (change)="getBankList()">
+                            <option [ngValue]='null' selected> 請選擇收款行</option>
+                            <option *ngFor="let city of bankList" [value]="city">
+                                {{ city }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-5">
+                        <select class="form-select" name="payeeBankName" formControlName="payeeBankName" (change)="getBranchBankList()">
+                            <option  [ngValue]='null' selected> 請選擇收款分行 </option>
+                            <option *ngFor="let area of branchBankList" [value]="area">
+                                {{ area }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+<!--                <div class="form-group row">-->
+<!--                    <div class="col-sm-2"></div>-->
+<!--                    <div class="mt-2 col-sm-5" *ngIf="myFormGroup.controls['payeeBankId'].invalid && (myFormGroup.controls['payeeBankId'].dirty || myFormGroup.controls['payeeBankId'].touched)">-->
+<!--                        <span *ngIf="myFormGroup.controls['payeeBankId']?.errors?.message" class="errorText">{{ myFormGroup.controls["payeeBankId"]?.errors?.message }}</span>-->
+<!--                    </div>-->
+
+<!--                    <div class="mt-2 col-sm-5" *ngIf="myFormGroup.controls['payeeBankName'].invalid && (myFormGroup.controls['payeeBankName'].dirty || myFormGroup.controls['payeeBankName'].touched)">-->
+<!--                        <span *ngIf="myFormGroup.controls['payeeBankName']?.errors?.message" class="errorText">{{ myFormGroup.controls["payeeBankName"]?.errors?.message }}</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+
+            </fieldset>
+
+            <fieldset class="mt-5">
+                <div class="form-group row">
+                    <label for="payeeName" class="col-sm-2 col-form-label">收款戶名</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="payeeName" formControlName="payeeName"
+                               maxlength="8" minlength="1" placeholder="請輸入收款人姓名" targetSelectAll>
+                    </div>
+                </div>
+                <div class="mt-2" *ngIf="myFormGroup.controls['payeeName']?.invalid && (myFormGroup.controls['payeeName']?.dirty || myFormGroup.controls['payeeName']?.touched)">
+                    <span *ngIf="myFormGroup.controls['payeeName']?.errors?.message" class="errorText">{{myFormGroup.controls['payeeName']?.errors?.message}}</span>
+                </div>
+            </fieldset>
+
+            <fieldset class="mt-5">
+                <div class="form-group row">
+                    <label for="payeeAccount" class="col-sm-2 col-form-label">收款帳號</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="payeeAccount" formControlName="payeeAccount"
+                               maxlength="14" minlength="10" placeholder="請輸入他行帳號" targetSelectAll numbersOnly>
+                    </div>
+                </div>
+                <div class="mt-2" *ngIf="myFormGroup.controls['payeeAccount']?.invalid && (myFormGroup.controls['payeeAccount']?.dirty || myFormGroup.controls['payeeAccount']?.touched)">
+                    <span *ngIf="myFormGroup.controls['payeeAccount']?.errors?.message" class="errorText">{{myFormGroup.controls['payeeAccount']?.errors?.message}}</span>
+                </div>
+            </fieldset>
+
+            <fieldset class="mt-5">
+                <div class="form-group row">
+                    <label for="memo" class="col-sm-2 col-form-label">匯款附言</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="memo" formControlName="memo"
+                               maxlength="16" minlength="0" placeholder="最多8個中文字或16位英數字" targetSelectAll>
+                    </div>
+                </div>
+                <div class="mt-2" *ngIf="myFormGroup.controls['memo']?.invalid && (myFormGroup.controls['memo']?.dirty || myFormGroup.controls['memo']?.touched)">
+                    <span *ngIf="myFormGroup.controls['memo']?.errors?.message" class="errorText">{{myFormGroup.controls['memo']?.errors?.message}}</span>
+                </div>
+            </fieldset>
+
+        </form>
+
+        <!-- 底部按鈕區塊 -->
+        <div class="">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+                <div fxLayoutAlign="center center"><button class="btn btn-primary actionButton" (click)="goNext()">下一步</button></div>
+            </div>
+        </div>
+    </main>
+</div>

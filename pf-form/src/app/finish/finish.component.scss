@@ -1,0 +1,29 @@
+.outerContainer {
+  padding: 5px;
+  //border: 1px solid #b6b6b6;
+  box-sizing: content-box;
+}
+
+div.container {
+  color: #eeeeee;
+  margin-bottom: 30px;
+}
+
+div.container > div {
+  height: 80px;
+  width: 300px;
+  color: #0044AD;
+  //border: 2px solid #0044AD;
+  background-color: transparent;
+}
+
+.fullsize {
+  height: 100%;
+  width: 100%;
+}
+
+.actionButton {
+  border-radius: 5%;
+  height: 50px;
+  width: 100px;
+}

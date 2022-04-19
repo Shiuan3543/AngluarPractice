@@ -1,0 +1,52 @@
+{
+    "*": {
+        "target2": "http://172.16.1.28:4002",
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "loglevel": "debug"
+    },
+
+    "/": {
+        "target2": "http://172.16.1.28:4002",
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "loglevel": "debug"
+    },
+
+    "/graphql": {
+        "target2": "http://172.16.1.28:4002",
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "loglevel": "debug"
+    },
+
+    "/api": {
+        "target2": "http://172.16.1.28:4002",
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "loglevel": "debug"
+    },
+
+    "/demo": {
+        "target2": "http://172.16.1.28:4002",
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "loglevel": "debug"
+    },
+
+    "/api/logout": {
+        "target2": "http://172.16.1.28:4002",
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "loglevel": "debug",
+        "pathRewrite": {
+            "^/logout": ""
+        }
+    }
+}

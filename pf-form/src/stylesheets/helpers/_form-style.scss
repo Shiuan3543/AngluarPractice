@@ -1,0 +1,336 @@
+/** 定義 mixin 指令 **/
+
+// --- form 表單共通樣式 <開始> ---
+@mixin formStyleSheet {
+  padding: 2.75rem 3rem;
+  .form-control {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    padding: 6px 0;
+  }
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #0044ad;
+  }
+  .form-control::placeholder,
+  .form-select {
+    color: #c3c3c3;
+  }
+  h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    color: #888888;
+  }
+  .form-check-label {
+    font-size: 0.875rem;
+    line-height: 21px;
+  }
+  .checkboxLabel {
+    margin-bottom: 8px;
+  }
+  .descriptionText {
+    font-size: 0.75rem; // 12px
+    line-height: 1.5; // 18px
+    padding-left: 30px;
+  }
+  .switchBtn {
+    width: 36px;
+    height: 20px;
+  }
+
+  .dashLine,
+  .dashLineRight,
+  .slashRight{
+    display: flex;
+  }
+  .dashLine::before,
+  .dashLine::after,
+  .dashLineRight::after{
+    content: "－";
+    color: #DBDBDB;
+    border-bottom: solid 1px #DBDBDB;
+    margin-top: 7px;
+    padding: 0 6px;
+  }
+
+  .slashRight::after{
+    content: "/";
+    color: #DBDBDB;
+    border-bottom: solid 1px #DBDBDB;
+    margin-top: 7px;
+    padding: 0 6px;
+  }
+
+
+  // 移除 input 欄位中 number 屬性的箭頭 button
+  /* Chrome, Safari, Edge, Opera */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  // 文字輸入區塊
+  textarea {
+    display: block;
+    width: 100%;
+    height: 90px;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    margin-bottom: 12px;
+    resize: none;
+  }
+  textarea:focus {
+    outline: none;
+    border-color: #0044ad;
+  }
+
+  // 表單驗證顏色樣式
+  input.ng-valid[required],
+  input.ng-valid.required,
+  select.ng-valid[required],
+  select.ng-valid.required {
+    border-bottom: 1px solid $success; /* green */
+  }
+  input.ng-invalid,
+  select.ng-invalid {
+    border-bottom: 1px solid $error; /* red */
+  }
+  input.ng-untouched,
+  select.ng-untouched {
+    border-bottom: 1px solid #dbdbdb; /* basic */
+  }
+
+  .switchBtn.ng-invalid {
+    border: 1px solid #bfbfbf;
+  }
+
+  textarea.ng-invalid {
+    border: 1px solid $error; /* red */
+    color: $error; /* red */
+  }
+  textarea.ng-invalid:focus {
+    border-color: $error; /* red */
+  }
+  .error {
+    color: $error; /* red */
+    border-bottom: 1px solid $error; /* red */
+  }
+
+
+
+  .form-control:disabled,
+  .form-control[readonly] {
+    background-color: #fff;
+    color: #c3c3c3;
+  }
+
+  .form-select {
+    color: #222222;
+  }
+}
+
+// 單位
+.unit,
+.age{
+  position: relative;
+}
+
+.unit:after {
+  content: "萬";
+  font-size: 1.25rem;
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+}
+
+// 歲數
+.age:after {
+  content: "歲";
+  font-size: 1.25rem;
+  position: absolute;
+  right: 0;
+  bottom: 8px;
+}
+.age input{
+  font-size: 1.25rem;
+}
+
+// 「更改」文字按鈕
+.editTextBtn{
+  margin-left: auto;
+}
+
+// 驗證
+.emailInputBlock,
+.codeInputBlock{
+  width: 85%;
+}
+.emailBtnBlock,
+.codeBtnBlock{
+  width: 15%;
+  padding: 6px 0;
+  text-align: end;
+  border-bottom: solid 1px #ced4da;
+}
+.emailBtnBlock,
+.codeBtnBlock,
+.editTextBtn{
+  cursor: pointer;
+}
+
+.emailBtnBlock {
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: $primary;
+}
+.editTextBtn{
+  color: $primary;
+}
+
+.emailBtnBlock:hover,
+.editTextBtn:hover{
+  text-decoration: underline;
+}
+
+.emailBtnBlock[disabled] {
+  color: rgba(16, 16, 16, 0.3);
+  cursor: default;
+}
+
+.emailBtnBlock[disabled]:hover,
+.cursorDefault:hover {
+  text-decoration: none;
+}
+
+.cursorDefault {
+  cursor: default;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid #ced4da;
+}
+
+// --- form 表單共通樣式 <結束> ---
+
+/** 引用 mixin **/
+
+form,
+.loan-apply-form {
+  @include formStyleSheet;
+}
+
+@media (max-width: 991px) {
+  // 驗證
+  .emailInputBlock,
+  .codeInputBlock {
+    width: 85%;
+  }
+  .emailBtnBlock,
+  .codeBtnBlock {
+    width: 15%;
+  }
+
+  // 錯誤內容文字顏色
+  .errorText {
+    color: $error;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  form,
+  .loan-apply-form {
+    padding: 44px 25px;
+  }
+  .checkboxLabel {
+    margin-bottom: 7px;
+  }
+  .bg-md-white {
+    background-color: #fff;
+  }
+  // 驗證
+  .emailInputBlock,
+  .codeInputBlock {
+    width: 75%;
+  }
+  .emailBtnBlock,
+  .codeBtnBlock {
+    width: 25%;
+  }
+  // 錯誤內容文字顏色
+  .errorText {
+    color: $error;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  // 驗證
+  .emailInputBlock,
+  .codeInputBlock {
+    width: 70%;
+  }
+  .emailBtnBlock,
+  .codeBtnBlock {
+    width: 30%;
+  }
+  // 錯誤內容文字顏色
+  .errorText {
+    color: $error;
+    font-size: 12px;
+  }
+}
+
+form,
+.loan-apply-form {
+  padding: 24px 25px;
+}
+
+.checkboxLabel {
+  margin-bottom: 7px;
+}
+
+.bg-md-white {
+  background-color: #fff;
+}
+
+//透明背景的input
+.form-control-transparent{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  width:100%;
+  padding: 6px 0;
+  background-color: transparent;
+ 
+}
+
+//驗證碼的input
+.verificationCode{
+  font-family:Arial; 
+  font-style:italic; 
+  font-weight:bold; 
+  border:0; 
+  letter-spacing:2px; 
+  color:red; 
+  
+}
+
+//驗證碼圖片input
+.verificationCodeImage{
+  float:right;
+}

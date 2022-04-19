@@ -1,0 +1,147 @@
+/** 定義 mixin 指令 **/
+// --- Landing 各流程起始頁共通樣式 <開始> ---
+@mixin landingPage {
+  .card {
+    border-radius: 0;
+    border: none;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.06);
+  }
+  .card-header {
+    background-color: $light-blue;
+    border: none;
+    img {
+      width: 450px;
+      height: 320px;
+    }
+  }
+  .card-header:first-child {
+    border-radius: 0;
+  }
+
+  .card-body {
+    padding-top: 2rem; // 32px;
+    padding-bottom: 44px;
+    width: 340px;
+    margin: 0 auto;
+    .form-check {
+      ul {
+        padding-left: 20px;
+      }
+      li {
+        list-style: disc;
+        padding-left: 0;
+      }
+      ::marker {
+        color: #888888;
+      }
+    }
+  }
+  .card-body > p {
+    margin-bottom: 28px;
+  }
+  .card-body ul {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    .needItem {
+      padding-left: 32px;
+      list-style: none;
+    }
+    .needItem{
+      margin-bottom: 24px;
+    }
+    .idCard::before {
+      position: absolute;
+      left: 0;
+      content: url("~src/assets/image/icon/ID_card.svg");
+    }
+    .evidence::before {
+      position: absolute;
+      left: 0;
+      content: url("~src/assets/image/icon/evidence.svg");
+    }
+    .digitalAccount::before {
+      position: absolute;
+      left: 0;
+      content: url("~src/assets/image/icon/preferential.svg");
+    }
+    .qualification::before {
+      position: absolute;
+      left: 0;
+      content: url("~src/assets/image/icon/qualification.svg");
+    }
+    .digitalAccount p{
+      width: 320px;
+    }
+  }
+}
+// --- Landing 各流程起始頁共通樣式 <結束> ---
+
+/** 引用 mixin **/
+.landingMain {
+  @include landingPage;
+}
+
+// RWD 斷點個別樣式
+// Pad 平板
+@media (max-width: 991px) {
+  .landingMain {
+    padding: 0;
+  }
+}
+
+// Mobile 手機（行動裝置）
+@media (max-width: 767px) {
+  .landingMain {
+    padding-left: 0;
+    padding-right: 0;
+    .card {
+      box-shadow: none;
+    }
+    .card-header {
+      border-radius: 0;
+      img {
+        width: 325px;
+        height: 186px;
+      }
+    }
+    .card-body {
+      padding: 50px 25px 24px 25px;
+      width: 100%;
+      margin: 0;
+    }
+    .card-body > p {
+      margin-bottom: 40px;
+    }
+    .card-body h2 {
+      margin-bottom: 12px;
+    }
+    .card-body p {
+      width: 279px;
+    }
+    .card-body ul .digitalAccount p{
+      width: 100%;
+    }
+    .needItem{
+      margin-bottom: 0;
+    }
+    .needItem:first-child p, .needItem:nth-child(2) p{
+      margin-bottom: 40px;
+    }
+    .bottomBtn button {
+      margin: 0 25px;
+    }
+  }
+}
+
+// Mobile 手機（行動裝置）
+@media (max-width: 320px) {
+  .landingMain {
+    .card-header img {
+      width: 100%;
+    }
+    .card-body p {
+      width: 220px;
+    }
+  }
+}

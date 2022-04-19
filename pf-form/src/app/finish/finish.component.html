@@ -1,0 +1,74 @@
+<!-- 頁首區塊 -->
+<div class="bg-md-blue">
+    <header class="container px-sm-default mb-0">
+        <div class="applyTitle pb-5 pb-md-6">
+            <section class="d-flex justify-content-between align-items-center">
+                <div class="div" style="width: 24px; height: 24px"></div>
+                <h2  class="text-dark-grey web-ch-h3 mobile-ch-h3">
+                    請確認交易資訊
+                </h2>
+                <div class="div" style="width: 24px; height: 24px"></div>
+            </section>
+        </div>
+    </header>
+</div>
+<!-- 主要內容區塊 -->
+<div class="bg-md-blue">
+    <main class="container px-0">
+        <form class="data-board container px-default px-md-8 py-md-6 mb-4 mb-md-5">
+
+            <fieldset class="mt-1">
+                <div class="form-group row">
+                    <label class="col-sm-12">親愛的客戶您好：</label>
+                    <div class="col-sm-12">
+                        您本次預約共 {{tradeList.length}} 筆：
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="mt-2">
+                <div class="form-group row">
+                    <label class="col-sm-12">
+                        <ol >
+                            <li *ngFor="let trade of tradeList">{{trade.isCash | preFilledTypePipe: trade.depositAccount:trade.withdrawAccount}}：&nbsp;{{trade.money | number: '1.0-0'}}&nbsp;&nbsp;元</li>
+
+                        </ol>
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset class="mt-2">
+                <div class="form-group row">
+                    <label class="col-sm-12">此功能僅為預填表單，仍需臨櫃完成交易，預約交易截止日民國 {{111}} 年 {{1}} 月 {{1}} 日。</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="form-check mt-3">
+                    <label class="checkboxLabel ml-3" for="ch1">
+                        <input type="checkbox" id="ch1" name="ch1" disabled [checked]="true"  />
+                        <div class="box"></div>
+                        我要將預填表單寄至我的信箱：
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset class="mt-1">
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="email" maxlength="50" minlength="10" placeholder="我的e-mail信箱" targetSelectAll numbersOnly>
+                    </div>
+                </div>
+            </fieldset>
+
+        </form>
+
+        <!-- 底部按鈕區塊 -->
+        <div class="">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+                <div fxLayoutAlign="center center"><button class="btn btn-primary actionButton" (click)="sendEmail()">傳送</button></div>
+                <div fxLayoutAlign="center center"><button class="btn btn-primary actionButton" (click)="finish()">結束</button></div>
+            </div>
+        </div>
+    </main>
+</div>

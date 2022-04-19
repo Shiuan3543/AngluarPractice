@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/41-success</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M19,38 C29.4934102,38 38,29.4934102 38,19 C38,8.50658975 29.4934102,0 19,0 C8.50658975,0 0,8.50658975 0,19 C0,29.4934102 8.50658975,38 19,38 Z" id="path-1"></path>
+        <filter x="-13.2%" y="-10.5%" width="126.3%" height="126.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.25 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="icon/41-success" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <g id="Oval-8">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#44AF35" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <path d="M15.966487,24.98877 L10.105784,18.8927199 C9.45840954,18.2193489 9.45840954,17.1277829 10.105784,16.4544119 C10.7531585,15.7810409 11.802583,15.7810409 12.4499575,16.4544119 L17.1383534,21.3310788 L25.0690788,13.0112809 C25.7164533,12.3381137 26.7661227,12.33791 27.4130564,13.0112809 C28.0606268,13.6846519 28.0606268,14.7764727 27.4130564,15.4495889 L18.3104646,24.98877 C17.9867774,25.3252517 17.5625409,25.4936709 17.1383534,25.4936709 C16.7143618,25.4936709 16.2899294,25.3254555 15.966487,24.98877 Z" id="Shape" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,50 @@
+.accordion-item{
+    border-bottom: none;
+}
+.tabsTitleOption{
+    width: 50%;
+    text-align: center;
+}
+.selectedTab{
+    border-bottom: 2px solid #0043ad;
+}
+.financialPreview{
+    width: 608px;
+    height: 384px;
+}
+
+
+.nav-tabs{
+    border-bottom: none;
+}
+.nav-tabs .nav-link,
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus{
+    border: none;
+}
+.nav-tabs .nav-link{
+    color: $grey-0;
+    padding-bottom: 12px;
+}
+.nav-tabs .nav-link:hover{
+    text-decoration: none;
+}
+.nav-tabs .nav-link.active{
+    color: $primary;
+    border-bottom: solid 3px $primary;
+}
+
+@media (max-width: 767px) {
+    .nav-tabs .nav-link{
+        padding-top: 14px;
+    }
+}
+
+// Mobile 手機（行動裝置）
+@media (max-width: 767px) {
+    .financialPreview {
+        width: 100%;
+        height: 100%;
+    }
+}

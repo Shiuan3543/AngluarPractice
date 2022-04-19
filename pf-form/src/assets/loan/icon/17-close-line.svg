@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/17-close-line</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="12" cy="12" r="12"></circle>
+        <path d="M12,10.8816763 L16.6500638,6.23161243 C16.9588804,5.92279586 17.459571,5.92279586 17.7683876,6.23161243 C18.0772041,6.540429 18.0772041,7.0411196 17.7683876,7.34993617 L13.1183237,12 L17.7683876,16.6500638 C18.0772041,16.9588804 18.0772041,17.459571 17.7683876,17.7683876 C17.459571,18.0772041 16.9588804,18.0772041 16.6500638,17.7683876 L12,13.1183237 L7.34993617,17.7683876 C7.0411196,18.0772041 6.540429,18.0772041 6.23161243,17.7683876 C5.92279586,17.459571 5.92279586,16.9588804 6.23161243,16.6500638 L10.8816763,12 L6.23161243,7.34993617 C5.92279586,7.0411196 5.92279586,6.540429 6.23161243,6.23161243 C6.540429,5.92279586 7.0411196,5.92279586 7.34993617,6.23161243 L12,10.8816763 Z" id="path-3"></path>
+    </defs>
+    <g id="icon/17-close-line" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Oval-2" fill="#FFFFFF" xlink:href="#path-1"></use>
+        <mask id="mask-4" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <g id="Combined-Shape" fill-rule="nonzero" fill="#FFFFFF">
+            <use fill-opacity="0.349999994" fill-rule="evenodd" xlink:href="#path-3"></use>
+            <use fill-opacity="0.599999964" fill-rule="evenodd" style="mix-blend-mode: overlay;" xlink:href="#path-3"></use>
+        </g>
+        <g id="Color/primary/default" mask="url(#mask-4)" fill="#3278BC">
+            <rect id="Color" x="0" y="0" width="24" height="24"></rect>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,35 @@
+<!-- Modal -->
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">
+            {{ title }}
+        </h5>
+    </div>
+    <div class="modal-body">
+        <p>
+            {{ context }}
+        </p>
+    </div>
+    <div class="modal-footer d-flex flex-nowrap p-0">
+        <button type="button" class="modalCancelBtn btn btn-outline-secondary web-ch-h6 mobile-ch-h6 col-6 m-0" (click)="closeModal()">
+    {{ cancelButtonText }}
+    </button>
+        <button type="button" class="btn btn-outline-secondary web-ch-h6 mobile-ch-h6 col-6 m-0" (click)="nextPageModal()" style="border-right: none;">
+      {{ confirmButtonText }}
+    </button>
+    </div>
+</div>
+
+<style>
+    .modalCancelBtn {
+        color: #626364;
+    }
+    
+    .modalCancelBtn:hover {
+        color: #0044ad;
+    }
+    
+    .btn-outline-secondary:focus {
+        box-shadow: none;
+    }
+</style>

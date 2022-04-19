@@ -1,0 +1,29 @@
+<!-- Modal -->
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">
+            {{ title }}
+        </h5>
+    </div>
+    <div class="modal-body" [innerHTML]="terms">
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="confirmBtn btn btn-outline-secondary k-button-secondary web-ch-h6 mobile-ch-h6 col" (click)="done()">
+            確定
+        </button>
+    </div>
+</div>
+
+<style>
+    .modalCancelBtn {
+        color: #626364;
+    }
+
+    .modalCancelBtn:hover {
+        color: #0044ad;
+    }
+
+    .btn-outline-secondary:focus {
+        box-shadow: none;
+    }
+</style>

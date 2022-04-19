@@ -1,0 +1,13 @@
+
+
+
+    <div *ngFor="let t of tradeList">
+        <h1>{{t.type}}</h1>
+        身分證：{{t.idno}}<br>
+        電話：{{t.phone}}<br>
+        存入方式：{{t.hasPassbook ? '有摺' : '無摺' }}<br>
+        是否存入本人帳戶：{{t.isSelfAccount ? '是' : '否' }}<br>
+        台幣金額：{{t.money}}<br>
+        存摺備註：{{t.memo}}
+    </div>
+

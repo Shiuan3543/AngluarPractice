@@ -1,0 +1,272 @@
+// --- 各區塊元件自定義通用樣式 ---
+@import "src/stylesheets/helpers/landing-page";               // 著陸頁
+@import "src/stylesheets/helpers/header";                     // 內容表頭
+@import "src/stylesheets/helpers/form-style";                 // 表單
+@import "src/stylesheets/helpers/checks-and-radios";          // 核取方塊與單選按鈕
+@import "src/stylesheets/helpers/multi-products-picker";      // 含內容之多選核取方塊
+@import "src/stylesheets/helpers/board-style";                // 內容卡片
+@import "src/stylesheets/helpers/accordion";                  // ng-bootstrap 手風琴
+@import "src/stylesheets/helpers/otp-page";                   // 一次性動態密碼頁
+@import "src/stylesheets/helpers/choosing-card";              // 選擇卡片頁
+@import "src/stylesheets/helpers/loan-page";                  // 貸款頁
+@import "src/stylesheets/helpers/confirmation";               // 確認頁
+@import "src/stylesheets/helpers/upload-document";            // 上傳證件頁
+@import "src/stylesheets/helpers/financial-statement";        // 財力證明頁
+@import "src/stylesheets/helpers/finish-page";                // 完成頁
+// --- 局部頁面各自獨立作用樣式 ---
+@import "src/stylesheets/helpers/partial-independent-style";  // 將各頁面內之 <style> 整合於此
+@import "src/stylesheets/helpers/dialog";  // 對話彈窗
+
+// colors 顏色變數
+$middle-blue: #0044ad;
+$light-blue: #e1ecf4;
+$grey-0: #626364;
+$grey-1: #888888;
+// $grey-2: #aaaaaa;
+$grey-3: #c3c3c3;
+// $grey-4: #dbdbdb;
+$grey-5: #e4e4e4;
+
+// RWD 斷點寬度變數
+$pc-width: 774px;
+$pad-width: 704px;
+$mobile-width: 100%;
+
+// HTML 標籤基本共通樣式
+body {
+  font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+a:hover {
+  display: block;
+  text-decoration: underline;
+}
+
+small{
+  color: #bfc1c2;
+}
+
+ul li {
+  list-style: none;
+}
+
+.bulletPoint {
+  list-style: disc;
+}
+
+header {
+  padding: 18px 0 24px 0;
+}
+
+// 容器共通樣式
+.container {
+  width: $pc-width;
+}
+
+// 自訂 padding 樣式
+.px-default, .px-md-default {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.px-sm-default {
+  padding: 0;
+}
+
+// 調整 Bootstrap Components 共通樣式
+.card {
+  border: none;
+}
+
+.tableBottomLine{
+  border-bottom: solid 0.5px $grey-5;
+}
+
+// 下方按鈕
+.bottomBtn {
+  padding-bottom: 64px;
+}
+
+// 刪除已上傳圖檔按鈕
+.deleteImgBtn{
+  display: flex;
+  margin-left: auto;
+}
+
+// 將文字內容 hover 效果轉以手指呈現
+.textPointer{
+  cursor: pointer;
+}
+
+// 增加使用者體驗 hover 預設樣式
+.hoverDefaultStyle:hover{
+  opacity: 0.7;
+}
+
+// 文字符號特殊樣式
+.font-large{
+  font-size: 52px;
+}
+
+// 圖檔浮水印
+.has-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.has-image:after {
+  content: '僅限凱基銀行信用貸款使用';
+  background: rgba(255, 255, 255, 0.8);
+  transform: rotate(-45deg);
+  position: absolute;
+  transform-origin: 0% center;
+  width: 100%;
+  left: -2%;
+  font-size: 12px;
+  text-align: left;
+  padding-left: 8%;
+  top: 140px;
+}
+
+/******************
+互動式候選清單
+*******************/
+// 自動搜尋下拉選單
+.dropdown-menu {
+  display: inline;
+  width: 100%;
+  max-width: 678px;
+}
+.candidate {
+  position: absolute;
+  top: 100px;
+  border-radius: 6px;
+  width: 100%;
+  overflow-y: auto;
+  border: 1px solid #D3D8E9;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  display: none;
+  background: #fff;
+}
+
+.has-candidate .candidate {
+  display: block;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.has-candidate input.need-valid:invalid {
+  border: #EDEDED 1px solid;
+}
+
+.candidate-item {
+  padding: 16px;
+  cursor: pointer;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.candidate-item:hover {
+  opacity: 1;
+  background: #D3D8E9;
+}
+
+.candidate-item:focus {
+  outline: none;
+  background: #D3D8E9;
+}
+
+// 銀行列表
+.searchBox {
+  position: relative;
+  input {
+    padding: 5px 30px;
+    border-radius: 5px;
+  }
+
+  img {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 2;
+    width: 28px;
+  }
+
+  .bankList {
+    color: #aaa;
+    padding: 8px 15px;
+    border: 1px solid #aaa;
+    margin-bottom: 2px;
+    border-radius: 6px;
+  }
+
+  .bankList:hover {
+    color: #3278bc;
+  }
+}
+
+// --- 斷點個別樣式 ---
+// Pad 平板
+@media (max-width: 991px) {
+  // 容器共通樣式
+  .container {
+    max-width: $pad-width;
+  }
+  // 自動搜尋下拉選單
+  .dropdown-menu {
+    display: inline;
+    width: 100%;
+    max-width: 608px;
+  }
+
+}
+
+// Mobile 手機（行動裝置）
+@media (max-width: 767px) {
+  // 容器共通樣式
+  .container {
+    max-width: $mobile-width;
+  }
+  // 自動搜尋下拉選單
+  .dropdown-menu {
+    display: inline;
+    width: 100%;
+    max-width: 340px;
+  }
+  // 手機版顏色變化共通樣式
+  .mobile-header-bg {
+    background-color: $light-blue;
+    box-shadow: none;
+  }
+  .mobile-bg-white {
+    background-color: #fff;
+  }
+  // 自訂 padding 樣式
+  .px-sm-default {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .px-md-default {
+    padding: 0;
+  }
+  // 下方按鈕
+  .bottomBtn {
+    padding-bottom: 34.44px;
+  }
+}

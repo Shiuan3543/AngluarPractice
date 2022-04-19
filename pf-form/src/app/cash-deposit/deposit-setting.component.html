@@ -1,0 +1,147 @@
+<!-- 頁首區塊 -->
+<div class="bg-md-blue">
+    <header class="container px-sm-default mb-0">
+        <div class="applyTitle pb-5 pb-md-6">
+            <section class="d-flex justify-content-between align-items-center">
+                <div class="div" style="width: 24px; height: 24px"></div>
+                <h2  class="text-dark-grey web-ch-h3 mobile-ch-h3">
+                    臺幣現金存款（限存入活期性/支票存款帳戶）
+                </h2>
+                <div class="div" style="width: 24px; height: 24px"></div>
+            </section>
+        </div>
+    </header>
+</div>
+<!-- 主要內容區塊 -->
+<div class="bg-md-blue">
+    <main class="container px-0">
+        <form class="data-board container px-default px-md-8 py-md-6 mb-4 mb-md-5" [formGroup]="myFormGroup">
+            <!-- 水平列 -->
+            <fieldset class="mb-4">
+                <div class="d-flex">
+                    <div class="categoryRadioBlock">
+                        <div class="form-check d-flex flex-column">
+                            <label class="radioLabel">
+                                <input type="radio" name="hasPassbook" [value]="true" checked [(ngModel)]="hasPassbook" (ngModelChange)="clearAndUpdateRelated($event)" [ngModelOptions]="{standalone: true}" />現金有摺存款
+                                <div class="circle"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="categoryRadioBlock">
+                        <div class="form-check d-flex flex-column">
+                            <label class="radioLabel">
+                                <input type="radio" name="hasPassbook" [value]="false" [(ngModel)]="hasPassbook" (ngModelChange)="clearAndUpdateRelated($event)" [ngModelOptions]="{standalone: true}" />現金無摺存款
+                                <div class="circle"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-4" *ngIf="!hasPassbook">
+                <div class="d-flex">
+                    <div class="categoryRadioBlock pt-1">是否存入本人帳號</div>
+                    <div class="categoryRadioBlock">
+                        <div class="form-check">
+                            <label class="radioLabel">
+                                <input type="radio" name="isSelfAccount" [value]="true" checked [ngModel]="isSelfAccount" (ngModelChange)="updateSelfAccountInfo($event)" [ngModelOptions]="{standalone: true}" />是
+                                <div class="circle"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="categoryRadioBlock">
+                        <div class="form-check">
+                            <label class="radioLabel">
+                                <input type="radio" name="isSelfAccount" [value]="false" [ngModel]="isSelfAccount"  (ngModelChange)="updateSelfAccountInfo($event)" [ngModelOptions]="{standalone: true}" />否
+                                <div class="circle"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <ng-container formArrayName="baseModelFormArray">
+
+                <ng-container *ngFor="let baseModelForm of baseModelFormArray.controls ; let i=index">
+
+                    <fieldset [formGroup]="baseModelForm">
+                        <fieldset class="mt-5">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">存入帳號</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" formControlName="depositAccount"
+                                           maxlength="14" minlength="12" placeholder="凱基銀行帳號" targetSelectAll numbersOnly>
+                                </div>
+                            </div>
+                            <div class="mt-1" *ngIf="baseModelForm.get('depositAccount')?.invalid && (baseModelForm.get('depositAccount')?.dirty || baseModelForm.get('depositAccount')?.touched)">
+                                <span *ngIf="baseModelForm.get('depositAccount')?.errors?.message" class="errorText">{{baseModelForm.get('depositAccount')?.errors?.message}}</span>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="mt-1">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">臺幣金額</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" formControlName="money"
+                                           maxlength="14" minlength="1" placeholder="最多可輸入14位數" targetSelectAll numbersOnly>
+                                </div>
+                            </div>
+                            <div class="mt-1" *ngIf="baseModelForm.get('money')?.invalid && (baseModelForm.get('money')?.dirty || baseModelForm.get('money')?.touched)">
+                                <span *ngIf="baseModelForm.get('money')?.errors?.message" class="errorText">{{baseModelForm.get('money')?.errors?.message}}</span>
+                            </div>
+                        </fieldset>
+
+
+                        <fieldset class="mt-1">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">存摺備註</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" formControlName="memo"
+                                           maxlength="16" minlength="0" placeholder="最多8個中文字或16位英數字" targetSelectAll>
+                                </div>
+                            </div>
+                            <!--                <label for="memo" class="web-ch-h6 mobile-ch-h6 text-grey-0 mb-2">存摺備註</label>-->
+                            <!--                <input-->
+                            <!--                        type="text"-->
+                            <!--                        class="form-control"-->
+                            <!--                        id="memo"-->
+                            <!--                        name="memo"-->
+                            <!--                        aria-describedby="memo"-->
+                            <!--                        formControlName="memo"-->
+                            <!--                        placeholder="最多8個中文字或16位英數字"-->
+                            <!--                        maxlength="16"-->
+                            <!--                        minlength="0"-->
+                            <!--                        targetSelectAll />-->
+
+                            <div class="mt-1" *ngIf="baseModelForm.get('memo')?.invalid && (baseModelForm.get('memo')?.dirty || baseModelForm.get('memo')?.touched)">
+                                <span *ngIf="baseModelForm.get('memo')?.errors?.message" class="errorText">{{baseModelForm.get('memo')?.errors?.message}}</span>
+                            </div>
+                        </fieldset>
+                    </fieldset>
+
+<!--                    <fieldset class="form-control mt-2">-->
+<!--                        <button class="btn btn-outline-primary" style="height: 50px; float: right;border-radius: 5%;" [disabled]="baseModelForm.invalid" (click)="add()">再新增一筆交易</button>-->
+<!--                    </fieldset>-->
+
+                </ng-container>
+
+                <fieldset class="form-control mt-2">
+                    <button class="btn btn-outline-primary" style="height: 50px; float: right;border-radius: 5%;" (click)="add()">再新增一筆交易</button>
+                </fieldset>
+
+            </ng-container>
+
+
+
+        </form>
+
+        <!-- 底部按鈕區塊 -->
+        <div class="">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+                <div fxLayoutAlign="center center"><button class="btn btn-primary actionButton" (click)="test()">測試</button></div>
+                <div fxLayoutAlign="center center"><button class="btn btn-primary actionButton" [disabled]="myFormGroup.invalid" (click)="goNext()">下一步</button></div>
+                <div fxLayoutAlign="center center"><button class="btn btn-primary actionButton" (click)="goMain()">回主選單</button></div>
+            </div>
+        </div>
+    </main>
+</div>

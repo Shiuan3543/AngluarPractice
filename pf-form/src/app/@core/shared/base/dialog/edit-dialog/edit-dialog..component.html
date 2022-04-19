@@ -1,0 +1,40 @@
+<form class="container px-default px-md-0 pt-0">
+    <h6 class="web-ch-h6 mobile-ch-h6 text-grey-0 px-0 pb-4">{{testTitle}}</h6>
+    <ng-template [ngIf]="condition === 'select'">
+        <div class="row">
+            <div class="col-6">
+                <select class="form-select form-control" aria-label="Default select example"
+                        name="tempHomeCountry">
+                    <option selected value="">請選擇縣市</option>
+                    <option>台北市</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <select class="form-select form-control" aria-label="Default select example"
+                        name="tempHomeArea">
+                    <option selected value="">請選擇區域</option>
+                    <option>中正區</option>
+                </select>
+            </div>
+        </div>
+        <!-- 水平列 -->
+        <div class="mt-5 mt-md-6">
+            <input
+                    type="text"
+                    class="form-control"
+                    id="address"
+                    name="homeAddr"
+                    aria-describedby="enterDetailedAddress"
+                    maxlength="100"
+                    chtAndEngAndNumValidation
+                    placeholder="詳細地址"
+                    targetSelectAll/>
+        </div>
+    </ng-template>
+</form>
+<!-- 底部按鈕區塊 -->
+<div class="bottomBtn mobile-bg-white d-flex flex-column container px-sm-default px-md-0 pt-6">
+    <button class="btn btn-primary web-ch-h4 mobile-ch-h4">
+        編輯完成
+    </button>
+</div>

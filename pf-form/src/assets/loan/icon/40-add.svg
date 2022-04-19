@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/40-add</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11,11 L11,3 L13,3 L13,11 L21,11 L21,13 L13,13 L13,21 L11,21 L11,13 L3,13 L3,11 L11,11 Z" id="path-1"></path>
+    </defs>
+    <g id="icon/40-add" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Combined-Shape" fill="#D8D8D8" xlink:href="#path-1"></use>
+        <g id="Color/primary/default" mask="url(#mask-2)" fill="#3278BC">
+            <rect id="Color" x="0" y="0" width="24" height="24"></rect>
+        </g>
+    </g>
+</svg>

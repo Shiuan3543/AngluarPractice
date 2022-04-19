@@ -1,0 +1,49 @@
+$background-blue: #f5f8fa;
+
+.bg-md-blue{
+  background-color: $background-blue;
+}
+
+header {
+  padding-bottom: 32px;
+  .applyTitle {
+    padding-top: 32px;
+  }
+  .leftArrowIcon, .customerServiceIcon{
+    width: 24px;
+  }
+  a:hover{
+    opacity: 0.7;
+  }
+
+  .progressBlock {
+    color: $middle-blue;
+    h2,
+    p {
+      margin-bottom: 12px;
+    }
+    .progress{
+      height: 3px;
+    }
+    .progress-bar {
+      background-color: $middle-blue;
+    }
+  }
+}
+
+// RWD
+@media (max-width: 767px) {
+  .bg-light-blue {
+    background-color: $light-blue;
+  }
+  .bg-md-blue{
+    background-color: #fff;
+  }
+  header {
+    margin-bottom: 33px;
+    .applyTitle {
+      padding-top: 18px;
+      padding-bottom: 24px;
+    }
+  }
+}

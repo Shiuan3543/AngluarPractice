@@ -1,0 +1,19 @@
+<!-- Modal -->
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">
+            {{ text }}
+        </h5>
+    </div>
+    <div class="modal-body">
+        <input type="text" class="form-control" [(ngModel)]="value" />
+    </div>
+    <div class="modal-footer d-flex flex-nowrap p-0">
+        <button type="button" class="modalCancelBtn btn btn-outline-secondary web-ch-h6 mobile-ch-h6 col-6 m-0" (click)="cancel()">
+            取消
+        </button>
+        <button type="button" class="btn btn-outline-secondary web-ch-h6 mobile-ch-h6 col-6 m-0" (click)="save()" style="border-right: none;">
+        確定
+        </button>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+.otpCodeLetter {
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+}
+.otpCodeRow {
+  width: 325px;
+  margin: 0 auto;
+  input {
+    width: 47px;
+    height: 56px;
+    border-radius: 0;
+    text-align: center;
+  }
+  // 表單驗證顏色樣式
+  input.ng-invalid {
+    border: 1px solid $error; /* red */
+  }
+  input.ng-untouched {
+    border: 1px solid $background-blue; /* basic */
+  }
+}
+
+.countdownText{
+  width: 360px;
+}
+
+.errorTextBlock {
+  width: 325px;
+  margin: 0 auto 92px auto;
+}
+
+
+.delivered {
+  margin-bottom: 56px;
+}
+
+.rePostBtnBlock{
+  display: inline;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: $primary;
+}
+.rePostBtnBlock:hover {
+  text-decoration: underline;
+}
+.rePostBtnBlock[disabled] {
+  color: #222222;
+  cursor: default;
+}
+.rePostBtnBlock[disabled]:hover {
+  text-decoration: none;
+}
+// 錯誤內容文字顏色
+.errorText {
+  color: $error;
+  font-size: 14px
+}
+// RWD 斷點個別樣式
+// Pad 平板
+@media (max-width: 991px) {
+  .delivered {
+    margin-bottom: 87px;
+  }
+
+  // 錯誤內容文字顏色
+  .errorText {
+    color: $error;
+    font-size: 12px
+  }
+}
+
+// Mobile 手機（行動裝置）
+@media (max-width: 767px) {
+  .errorTextBlock {
+    margin: 0 auto 118px auto;
+  }
+  .otpIllus {
+    height: 150px;
+  }
+  .delivered {
+    margin-bottom: 27px;
+  }
+  .countdownText{
+    width: 320px;
+  }
+
+  // 錯誤內容文字顏色
+  .errorText {
+    color: $error;
+    font-size: 12px
+  }
+}

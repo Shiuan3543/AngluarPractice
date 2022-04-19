@@ -1,0 +1,177 @@
+<!-- 頁首區塊 -->
+<div class="bg-md-blue">
+    <header class="container px-sm-default mb-0">
+        <div class="applyTitle pb-5 pb-md-6">
+            <section class="d-flex justify-content-between align-items-center">
+                <div class="div" style="width: 24px; height: 24px"></div>
+                <h2  class="text-dark-grey web-ch-h3 mobile-ch-h3">
+                    臺幣他行轉帳
+                </h2>
+                <div class="div" style="width: 24px; height: 24px"></div>
+            </section>
+        </div>
+    </header>
+</div>
+<!-- 主要內容區塊 -->
+<div class="bg-md-blue">
+    <main class="container px-0">
+        <form class="data-board container px-default px-md-8 py-md-6 mb-4 mb-md-5" [formGroup]="myFormGroup">
+            <fieldset class="mt-5">
+                <label class="col-sm-2 col-form-label">匯款人資訊</label>
+            </fieldset>
+
+            <fieldset class="mb-4">
+                <div class="d-flex">
+                    <div class="categoryRadioBlock">
+                        <div class="form-check d-flex flex-column">
+                            <label class="radioLabel">
+<!--                                <input type="radio" id="transactionType" name="transactionType" formControlName="transactionType" [value]="0" />存摺扣款匯款-->
+                                <input type="radio" name="transactionType" [value]="TRANSACTION_TYPE.ACCOUNT" checked [(ngModel)]="transactionType" (ngModelChange)="clearAndUpdateRelated($event)" [ngModelOptions]="{standalone: true}" />存摺扣款匯款
+                                <div class="circle"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="categoryRadioBlock">
+                        <div class="form-check d-flex flex-column">
+                            <label class="radioLabel">
+<!--                                <input type="radio" name="transactionType" formControlName="transactionType" [value]="1" />現金匯款-->
+                                <input type="radio" name="transactionType" [value]="TRANSACTION_TYPE.CASH" checked [(ngModel)]="transactionType" (ngModelChange)="clearAndUpdateRelated($event)" [ngModelOptions]="{standalone: true}" />現金匯款
+                                <div class="circle"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="mt-5" *ngIf="isByAccount()">
+                <div class="form-group row">
+                    <label for="remitterAccount" class="col-sm-2 col-form-label">扣款帳號</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="remitterAccount" formControlName="remitterAccount"
+                               maxlength="16" minlength="12" placeholder="凱基銀行帳號" targetSelectAll numbersOnly>
+                    </div>
+                </div>
+                <div class="mt-2" *ngIf="myFormGroup.controls['remitterAccount']?.invalid && (myFormGroup.controls['remitterAccount']?.dirty || myFormGroup.controls['remitterAccount']?.touched)">
+                    <span *ngIf="myFormGroup.controls['remitterAccount']?.errors?.message" class="errorText">{{myFormGroup.controls['remitterAccount']?.errors?.message}}</span>
+                </div>
+            </fieldset>
+
+            <fieldset class="mt-5">
+                <div class="form-group row">
+                    <label for="money" class="col-sm-2 col-form-label">匯款金額</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="money" formControlName="money"
+                               maxlength="8" minlength="1" placeholder="上限5000萬" targetSelectAll numbersOnly>
+                    </div>
+                </div>
+                <div class="mt-2" *ngIf="myFormGroup.controls['money']?.invalid && (myFormGroup.controls['money']?.dirty || myFormGroup.controls['money']?.touched)">
+                    <span *ngIf="myFormGroup.controls['money']?.errors?.message" class="errorText">{{myFormGroup.controls['money']?.errors?.message}}</span>
+                </div>
+            </fieldset>
+
+            <fieldset class="mt-5">
+                <div class="form-group row">
+                    <label for="remitterName" class="col-sm-2 col-form-label">匯款人姓名</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="remitterName" formControlName="remitterName"
+                               maxlength="10" minlength="1" placeholder="請輸入姓名" targetSelectAll>
+                    </div>
+                </div>
+
+                <div class="mt-2" *ngIf="myFormGroup.controls['remitterName']?.invalid && (myFormGroup.controls['remitterName']?.dirty || myFormGroup.controls['remitterName']?.touched)">
+                    <span *ngIf="myFormGroup.controls['remitterName']?.errors?.message" class="errorText">{{myFormGroup.controls['remitterName']?.errors?.message}}</span>
+                </div>
+            </fieldset>
+
+            <fieldset class="mt-5">
+                <div class="form-group row">
+                    <label for="remitterIdno" class="col-sm-2 col-form-label">匯款人身分證號／統一編號</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="remitterIdno" formControlName="remitterIdno"
+                               maxlength="10" minlength="8" placeholder="請輸入身分證字號或統一編號" targetSelectAll>
+                    </div>
+                </div>
+
+                <div class="mt-2"
+                     *ngIf="myFormGroup.controls['remitterIdno'].invalid && (myFormGroup.controls['remitterIdno'].dirty || myFormGroup.controls['remitterIdno'].touched)">
+                    <span *ngIf="myFormGroup.controls['remitterIdno']?.errors?.message" class="errorText">{{myFormGroup.controls['remitterIdno']?.errors?.message}}</span>
+                </div>
+            </fieldset>
+
+            <fieldset class="mt-5">
+                <div class="form-group row">
+                    <label for="remitterPhone" class="col-sm-2 col-form-label">匯款人電話</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="remitterPhone" formControlName="remitterPhone" phoneValidator
+                               maxlength="10" minlength="9" placeholder="請輸入手機或室話（含區域號碼）" targetSelectAll>
+                    </div>
+                </div>
+
+                <div class="mt-2" *ngIf="myFormGroup.controls['remitterPhone']?.invalid && (myFormGroup.controls['remitterPhone']?.dirty || myFormGroup.controls['remitterPhone']?.touched)">
+                    <span *ngIf="myFormGroup.controls['remitterPhone']?.errors?.message" class="errorText">{{myFormGroup.controls['remitterPhone']?.errors?.message}}</span>
+                </div>
+            </fieldset>
+
+            <fieldset class="mt-5 form-check">
+                <label class="checkboxLabel web-ch-h6 mobile-ch-h6 mb-checkboxLabel mb-2" for="isAgent">
+                    <input type="checkbox" id="isAgent" name="isAgent" formControlName="isAgent" (change)="updateAgentInfo($event)"/>我幫別人（或公司）匯款
+                    <div class="box"></div>
+                </label>
+            </fieldset>
+
+            <div *ngIf="myFormGroup.controls['isAgent'].value">
+                <fieldset class="mt-5">
+                    <div class="form-group row">
+                        <label for="agentName" class="col-sm-2 col-form-label">代理人姓名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="agentName" formControlName="agentName"
+                                   maxlength="10" minlength="1" placeholder="請輸入姓名" targetSelectAll>
+                        </div>
+                    </div>
+
+                    <div class="mt-2" *ngIf="myFormGroup.controls['agentName']?.invalid && (myFormGroup.controls['agentName']?.dirty || myFormGroup.controls['agentName']?.touched)">
+                        <span *ngIf="myFormGroup.controls['agentName']?.errors?.message" class="errorText">{{myFormGroup.controls['agentName']?.errors?.message}}</span>
+                    </div>
+                </fieldset>
+
+                <fieldset class="mt-5">
+                    <div class="form-group row">
+                        <label for="agentIdno" class="col-sm-2 col-form-label">代理人身分證號</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="agentIdno" formControlName="agentIdno"
+                                   maxlength="10" minlength="8" placeholder="請輸入身分證字號" targetSelectAll>
+                        </div>
+                    </div>
+
+                    <div class="mt-2"
+                         *ngIf="myFormGroup.controls['agentIdno'].invalid && (myFormGroup.controls['agentIdno'].dirty || myFormGroup.controls['agentIdno'].touched)">
+                        <span *ngIf="myFormGroup.controls['agentIdno']?.errors?.message" class="errorText">{{myFormGroup.controls['agentIdno']?.errors?.message}}</span>
+                    </div>
+                </fieldset>
+
+                <fieldset class="mt-5">
+                    <div class="form-group row">
+                        <label for="agentPhone" class="col-sm-2 col-form-label">代理人電話</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="agentPhone" formControlName="agentPhone" phoneValidator
+                                   maxlength="10" minlength="9" placeholder="請輸入手機或室話（含區域號碼）" targetSelectAll>
+                        </div>
+                    </div>
+
+                    <div class="mt-2" *ngIf="myFormGroup.controls['agentPhone']?.invalid && (myFormGroup.controls['agentPhone']?.dirty || myFormGroup.controls['agentPhone']?.touched)">
+                        <span *ngIf="myFormGroup.controls['agentPhone']?.errors?.message" class="errorText">{{myFormGroup.controls['agentPhone']?.errors?.message}}</span>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+
+        <!-- 底部按鈕區塊 -->
+        <div class="">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+                <div fxLayoutAlign="center center"><button class="btn btn-primary actionButton" (click)="goBack()">上一步</button></div>
+                <div fxLayoutAlign="center center"><button class="btn btn-primary actionButton" (click)="goNext()">下一步</button></div>
+                <div fxLayoutAlign="center center"><button class="btn btn-primary actionButton" (click)="goMain()">回主選單</button></div>
+            </div>
+        </div>
+    </main>
+</div>

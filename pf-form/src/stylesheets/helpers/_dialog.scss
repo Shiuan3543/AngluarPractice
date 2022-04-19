@@ -1,0 +1,16 @@
+.cancelBtn,
+.confirmBtn {
+  border-radius: 0;
+  border: none;
+}
+.cancelBtn,
+.cancelBtn:hover {
+  color: #888888;
+}
+.btnListBorder {
+  border-top: 1px solid #e4e4e4;
+}
+.btnListBorderLine {
+  width: 1px;
+  background-color: #e4e4e4;
+}

@@ -1,0 +1,42 @@
+<div>
+    <kgi-header-full-component (toggle)="drawer.toggle()" [selectedPage]="selected"></kgi-header-full-component>
+
+    <router-outlet></router-outlet>
+
+<!--    <div class="custom-toolbar">-->
+<!--        <button kendoButton icon="menu" look="flat" (click)="drawer.toggle()"></button>-->
+<!--        <span class="header"> Kendo UI for Angular Documentation </span>-->
+<!--    </div>-->
+
+    <kendo-drawer-container>
+        <kendo-drawer
+            #drawer
+            [items]="drawerItems"
+            [mode]="mode"
+            [mini]="mini"
+            [miniWidth]="50"
+            [width]="200"
+            [(expanded)]="drawerExpanded"
+            [autoCollapse]="false"
+            [expanded]="true"
+            [animation]="true"
+            (select)="onSelect($event)">
+
+            <ng-template kendoDrawerItemTemplate let-item>
+                <div class="k-level-{{ item.level }}">
+                    <span class="k-icon {{ item.icon }}"></span>
+                </div>
+                <div class="k-level-{{ item.level }}" style="white-space:nowrap;">{{ item.title }}</div>
+                <span *ngIf="item.expanded && item['children']" class="k-icon k-i-arrow-chevron-down" style="margin-left: auto;"></span>
+                <span *ngIf="!item.expanded && item['children']" class="k-icon k-i-arrow-chevron-right arrow-left" style="margin-left: auto"></span>
+            </ng-template>
+
+        </kendo-drawer>
+
+        <kendo-drawer-content>
+            <router-outlet></router-outlet>
+        </kendo-drawer-content>
+    </kendo-drawer-container>
+
+    <kgi-footer></kgi-footer>
+</div>

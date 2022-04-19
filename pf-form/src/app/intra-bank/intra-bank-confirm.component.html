@@ -1,0 +1,76 @@
+<!-- 頁首區塊 -->
+<div class="bg-md-blue">
+    <header class="container px-sm-default mb-0">
+        <div class="applyTitle pb-5 pb-md-6">
+            <section class="d-flex justify-content-between align-items-center">
+                <div class="div" style="width: 24px; height: 24px"></div>
+                <h2 class="text-dark-grey web-ch-h3 mobile-ch-h3">
+                    請確認交易資訊
+                </h2>
+                <div class="div" style="width: 24px; height: 24px"></div>
+            </section>
+        </div>
+    </header>
+</div>
+<!-- 主要內容區塊 -->
+<div class="bg-md-blue">
+    <main class="container px-0">
+        <div class="data-board px-default px-md-8 py-md-6 mb-4 mb-md-5">
+
+            <ng-container *ngFor="let data of dataList">
+
+                <fieldset class="mt-1">
+                    <div class="form-group row">
+                        <label class="col-sm-3 ">轉出帳號：</label>
+                        <div class="col-sm-9">
+                            {{data.remitterAccount }}
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="mt-1">
+                    <div class="form-group row">
+                        <label class="col-sm-3">轉入帳號：</label>
+                        <div class="col-sm-9">
+                            {{data.payeeAccount}}
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="mt-1">
+                    <div class="form-group row">
+                        <label class="col-sm-3">轉帳金額</label>
+                        <div class="col-sm-9">
+                            {{data.money}}
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="mt-1">
+                    <div class="form-group row">
+                        <label class="col-sm-3">存摺備註</label>
+                        <div class="col-sm-9">
+                            {{data.memo}}
+                        </div>
+                    </div>
+                </fieldset>
+
+            </ng-container>
+        </div>
+
+        <!-- 底部按鈕區塊 -->
+        <div class="">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+                <div fxLayoutAlign="center center">
+                    <button class="btn btn-primary actionButton" style="width: 110px; height: 70px" (click)="goMain()">預約下一筆</button>
+                </div>
+                <div fxLayoutAlign="center center">
+                    <button class="btn btn-primary actionButton" style="width: 110px;height: 70px" (click)="goNext()">填寫完成 無下一筆</button>
+                </div>
+                <div fxLayoutAlign="center center">
+                    <button class="btn btn-primary actionButton" style="width: 110px;height: 70px" (click)="goBack()">修改</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
