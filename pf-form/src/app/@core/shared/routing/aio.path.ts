@@ -31,5 +31,7 @@ export enum COMPONENT_AIO {
 
     SHORTURL = 'shorturl', // 短網址產生器
 
-    VIOLATION = 'Violation',//違規者資訊
+    SHAREURL = 'shareurl', // QrCode分享
+
+    VIOLATION = 'Violation', // 違規者資訊
 }

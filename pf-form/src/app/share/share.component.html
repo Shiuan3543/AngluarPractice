@@ -1,0 +1,64 @@
+<!-- 頁首區塊 -->
+<div class="bg-md-blue">
+    <header class="container px-sm-default mb-0">
+        <div class="applyTitle pb-5 pb-md-6">
+            <section class="d-flex justify-content-between align-items-center">
+                <div class="div" style="width: 24px; height: 24px"></div>
+                <h2 class="text-dark-grey web-ch-h3 mobile-ch-h3">
+                    我要分享
+                </h2>
+                <div class="div" style="width: 24px; height: 24px"></div>
+            </section>
+        </div>
+    </header>
+</div>
+
+<!-- 主要內容區塊 -->
+<div class="bg-md-blue">
+    <main class="container px-0">
+        <!-- 表單區塊 -->
+        <form class="gIdentityBottom data-board d-flex flex-column px-md-8 py-md-7">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
+                <div fxLayoutAlign="center center">
+                    <button class="btn btn-outline-primary fullsize" (click)="createQrCode()">
+                        產生我的QRCode
+                    </button>
+                </div>
+            </div>
+
+            <div class="qrcodeImage" fxLayoutAlign="center center" class="container" targetSelectAll>
+                <qrcode #parent
+                        [allowEmptyString]="true"
+                        [qrdata]="qrUrl"
+                        [elementType]="'img'"
+                        [width]="300"
+                        [level]="'M'"
+                        [colorLight]="'#000000'"
+                        [colorDark]="'FFFF00'"
+                        [errorCorrectionLevel]="'M'"
+                ></qrcode>
+            </div>
+            <br>
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
+                <div fxLayoutAlign="center center">
+                    <button class="btn btn-outline-primary fullsize" (click)="saveAsImg(parent)">下載二維碼</button>
+                </div>
+            </div>
+            <br>
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
+                <div fxLayoutAlign="center center">
+                    <button class="btn btn-outline-primary fullsize" (click)="shareCount()">
+                        查看我的分享次數: {{myCount}}
+                    </button>
+                </div>
+            </div>
+            <br>
+            <!-- 底部按鈕區塊 -->
+            <div class="bottomBtn container px-sm-default px-md-8 d-flex flex-column">
+                <button (click)="goMain()" class="btn btn-primary web-ch-h4 mobile-ch-h4 mt-md-7">
+                    回首頁
+                </button>
+            </div>
+        </form>
+    </main>
+</div>

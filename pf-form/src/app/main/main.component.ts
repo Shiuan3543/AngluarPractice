@@ -7,8 +7,8 @@ import {COMPONENT_AIO} from '../@core/shared/routing/aio.path';
 import {DIALOG_TYPE, SlideDialogService} from '../@core/shared/service/slide-dialog.service';
 import {ResizeService} from '../@core/shared/service/resize.service';
 import {SpinnerService} from '../@core/shared/service/spinner.service';
-import {HttpClient} from "@angular/common/http";
-import {TradeModel} from "../@core/shared/model/trade.model";
+import {HttpClient} from '@angular/common/http';
+import {TradeModel} from '../@core/shared/model/trade.model';
 
 @Component({
     selector: 'app-main',
@@ -56,6 +56,10 @@ export class MainComponent implements OnInit {
 
     getShortUrl() {
         this.router.navigate(['/' + COMPONENT_AIO.SHORTURL]);
+    }
+
+    getShareUrl() {
+        this.router.navigate(['/' + COMPONENT_AIO.SHAREURL]);
     }
 
     getViolation() {

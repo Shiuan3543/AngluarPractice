@@ -20,8 +20,15 @@
         <b>短網址：</b><a href="#/shortcut" (click)="goToLink(shortcut.longUrl)">{{sList.shortUrl}}</a>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
             <!-- <div class="qrcodeImage" ngif ='sList.id>0' align="center"> -->
-            <qrcode #parent [qrdata]="sList.longUrl" [elementType]="'img'" [width]="256"
-                    [colorLight]="'#000000'" [colorDark]="'FFFF00'" [errorCorrectionLevel]="'M'"></qrcode>
+            <qrcode #parent
+                    [allowEmptyString]="true"
+                    [qrdata]="sList.longUrl"
+                    [elementType]="'img'"
+                    [width]="256"
+                    [colorLight]="'#000000'"
+                    [colorDark]="'FFFF00'"
+                    [errorCorrectionLevel]="'M'">
+            </qrcode>
 
         </div>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
