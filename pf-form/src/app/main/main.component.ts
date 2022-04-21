@@ -62,8 +62,11 @@ export class MainComponent implements OnInit {
         this.router.navigate(['/' + COMPONENT_AIO.SHAREURL]);
     }
 
+    getCityPickerUrl(){
+        this.router.navigate(['/' + COMPONENT_AIO.CITYPIKER]);
+    }
+
     getViolation() {
         this.router.navigate(['/' + COMPONENT_AIO.VIOLATION]);
     }
-
 }

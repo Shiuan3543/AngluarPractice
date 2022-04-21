@@ -1,0 +1,26 @@
+<label for="city">請選擇縣市</label>
+<select id="city" [(ngModel)]="selectedCity" (ngModelChange)="changCity($event)">
+    <option *ngFor="let city of cityList" [ngValue]="city">
+        {{city.hsnNm}}
+    </option>
+</select>
+<br>
+<label for="area">請選擇鄉鎮市區</label>
+<select id="area" [(ngModel)]="selectedArea" (ngModelChange)="changeArea()">
+    <option *ngFor="let area of areaList" [ngValue]="area">
+        {{area.townNm}}
+    </option>
+</select>
+<br>
+<label>請選擇里</label>
+<select id="village" [(ngModel)]="selectedVillage">
+    <option *ngFor="let village of villageList" [ngValue]="village">
+        {{village.villNm}}
+    </option>
+</select>
+<br>
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
+    <div fxLayoutAlign="center center">
+        <button class="btn btn-outline-primary fullsize" (click)="goMain()">回首頁</button>
+    </div>
+</div>

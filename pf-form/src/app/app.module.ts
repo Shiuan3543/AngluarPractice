@@ -32,6 +32,7 @@ import {UserComponent} from './user/user.component';
 import {ShorturlComponent} from './shorturl/shorturl.component';
 import {ViolationComponent} from './violation/violation.component';
 import {ShareComponent} from './share/share.component';
+import { CityPickerComponent } from './city-picker/city-picker.component';
 
 @NgModule({
     declarations: [
@@ -59,6 +60,7 @@ import {ShareComponent} from './share/share.component';
         AppComponent,
         ViolationComponent,
         ShareComponent,
+        CityPickerComponent,
     ],
     imports: [
         ThemeModule.forRoot(),

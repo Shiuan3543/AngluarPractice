@@ -15,7 +15,6 @@
 <!-- 主要內容區塊 -->
 <div class="bg-md-blue">
     <main class="container px-0">
-
         <div class="outerContainer">
             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
                 <div fxLayoutAlign="center center">
@@ -28,20 +27,18 @@
                             (click)="goCashWithdrawal()">臺幣現金提款
                     </button>
                 </div>
-            </div>
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
                 <div fxLayoutAlign="center center">
                     <button class="Regular shadow border15 btn btn-outline-primary fullsize" (click)="goIntraBank()">
                         臺幣本行轉帳
                     </button>
                 </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
                 <div fxLayoutAlign="center center">
                     <button class="Regular shadow border15 btn btn-outline-primary fullsize" (click)="goInterBank()">
                         臺幣他行匯款
                     </button>
                 </div>
-            </div>
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="container">
                 <div fxLayoutAlign="center center">
                     <button class="Regular shadow border15 btn btn-outline-primary fullsize" (click)="getUser()">
                         檢視客戶資訊
@@ -57,6 +54,11 @@
                 <div fxLayoutAlign="center center">
                     <button class="Regular shadow border15 btn btn-outline-primary fullsize" (click)="getShareUrl()">
                         QrCode
+                    </button>
+                </div>
+                <div fxLayoutAlign="center center">
+                    <button class="Regular shadow border15 btn btn-outline-primary fullsize" (click)="getCityPickerUrl()">
+                        城市選單
                     </button>
                 </div>
                 <div fxLayoutAlign="center center">

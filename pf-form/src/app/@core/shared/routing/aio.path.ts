@@ -33,5 +33,7 @@ export enum COMPONENT_AIO {
 
     SHAREURL = 'shareurl', // QrCode分享
 
+    CITYPIKER = 'citypiker', // 城市選單
+
     VIOLATION = 'Violation', // 違規者資訊
 }

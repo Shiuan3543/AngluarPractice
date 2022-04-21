@@ -1,4 +1,4 @@
-export class shorts{
+export class shorts {
     id: number;
     longUrl: string;
     shortUrl: string;

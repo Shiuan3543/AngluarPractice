@@ -18,6 +18,7 @@ import {UserComponent} from './user/user.component';
 import {ShorturlComponent} from './shorturl/shorturl.component';
 import {ViolationComponent} from './violation/violation.component';
 import {ShareComponent} from './share/share.component';
+import {CityPickerComponent} from './city-picker/city-picker.component';
 
 
 const routes: Routes = [
@@ -90,6 +91,10 @@ const routes: Routes = [
     {
         path: COMPONENT_AIO.SHAREURL,  // QrCode
         component: ShareComponent
+    },
+    {
+        path: COMPONENT_AIO.CITYPIKER,  // city-picker
+        component: CityPickerComponent
     },
     {
         path: COMPONENT_AIO.VIOLATION,  // 違規數名單
